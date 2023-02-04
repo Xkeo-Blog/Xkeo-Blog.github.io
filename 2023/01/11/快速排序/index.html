@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives | Xkeo&#39;s Blog</title>
+  <title>快速排序 | Xkeo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Xkeo&#39;s Blog">
-<meta property="og:url" content="http://kk-blog.top/archives/index.html">
+  <meta name="description" content="1.快排的原理基本思想：  先从数列中取出一个数作为基准数(key)； 分区，将比key大的全部放到它的右边，比key小的全部放在它的右边； 再对左右区间重复该步骤。  2.代码思路关键代码： 1234567891011121314151617181920void quicksort(int a[], int left, int right)&amp;#123;	&#x2F;&#x2F;l:左边指针， r:右边指针，key:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速排序">
+<meta property="og:url" content="http://kk-blog.top/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
+<meta property="og:description" content="1.快排的原理基本思想：  先从数列中取出一个数作为基准数(key)； 分区，将比key大的全部放到它的右边，比key小的全部放在它的右边； 再对左右区间重复该步骤。  2.代码思路关键代码： 1234567891011121314151617181920void quicksort(int a[], int left, int right)&amp;#123;	&#x2F;&#x2F;l:左边指针， r:右边指针，key:">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-11T03:42:00.000Z">
+<meta property="article:modified_time" content="2023-01-17T09:54:23.020Z">
 <meta property="article:author" content="Xkeo">
+<meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Xkeo&#39;s Blog" type="application/atom+xml">
@@ -62,216 +67,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/04/hello-world/" class="archive-article-date">
-  <time datetime="2023-02-04T11:40:10.281Z" itemprop="datePublished">2月 4</time>
+        <section id="main"><article id="post-快速排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time datetime="2023-01-11T03:42:00.000Z" itemprop="datePublished">2023-01-11</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/04/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      快速排序
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/" class="archive-article-date">
-  <time datetime="2023-01-30T11:26:00.000Z" itemprop="datePublished">1月 30</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/">第十一届蓝桥杯B组</a>
-    </h1>
-  
+        <h1 id="1-快排的原理"><a href="#1-快排的原理" class="headerlink" title="1.快排的原理"></a>1.快排的原理</h1><p>基本思想：</p>
+<ol>
+<li>先从数列中取出一个数作为基准数(key)；</li>
+<li>分区，将比key大的全部放到它的右边，比key小的全部放在它的右边；</li>
+<li>再对左右区间重复该步骤。</li>
+</ol>
+<h1 id="2-代码思路"><a href="#2-代码思路" class="headerlink" title="2.代码思路"></a>2.代码思路</h1><p>关键代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quicksort</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> left, <span class="type">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//l:左边指针， r:右边指针，key:基准数</span></span><br><span class="line">	<span class="type">int</span> l = left, r = right, key = a[(left + right) / <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (a[l] &lt; key) l++;</span><br><span class="line">		<span class="keyword">while</span> (a[r] &gt; key) r--;</span><br><span class="line">		<span class="keyword">if</span> (l &lt;= r)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> tmp = a[l];</span><br><span class="line">			a[l] = a[r];</span><br><span class="line">			a[r] = tmp;</span><br><span class="line">			l++, r--;<span class="comment">//更新指针(感觉这很容易忘)</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">while</span> (l &lt;= r);</span><br><span class="line">	<span class="keyword">if</span> (l &lt; right) <span class="built_in">quicksort</span>(a, l, right);</span><br><span class="line">	<span class="keyword">if</span> (r &gt; left)  <span class="built_in">quicksort</span>(a, left, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
-  <time datetime="2023-01-17T11:50:00.000Z" itemprop="datePublished">1月 17</time>
-</a>
+<p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1177">洛谷 P1177</a></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">前驱图与程序设计</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/" class="archive-article-date">
-  <time datetime="2023-01-17T11:50:00.000Z" itemprop="datePublished">1月 17</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://kk-blog.top/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cldq33s75000ckwt47n620vur" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/">操作系统引论</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/17/%E4%BA%8C%E5%88%86/" class="archive-article-date">
-  <time datetime="2023-01-17T02:25:00.000Z" itemprop="datePublished">1月 17</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/17/%E4%BA%8C%E5%88%86/">二分</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sort函数笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BUUCTF刷题1</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" class="archive-article-date">
-  <time datetime="2023-01-11T06:00:00.000Z" itemprop="datePublished">1月 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/">BUUCTF刷题2</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  <time datetime="2023-01-11T04:26:00.000Z" itemprop="datePublished">1月 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/">sort函数笔记</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  <time datetime="2023-01-11T03:42:00.000Z" itemprop="datePublished">1月 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/" class="archive-article-date">
-  <time datetime="2023-01-05T03:26:00.000Z" itemprop="datePublished">1月 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/">BUUCTF刷题1</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/01/05/%E6%A8%A1%E6%8B%9F/" class="archive-article-date">
-  <time datetime="2023-01-05T03:26:00.000Z" itemprop="datePublished">1月 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/05/%E6%A8%A1%E6%8B%9F/">模拟</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-  </nav>
 
 </section>
         
