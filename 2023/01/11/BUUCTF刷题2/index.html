@@ -1,13 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
 
+
+<!DOCTYPE html>
+<html lang="zh-cn" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>BUUCTF刷题2 | Xkeo&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录  新年快乐 xor helloword reverse3  新年快乐 查壳   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;可以看到这是一个带壳的32位exe文件  脱壳  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;脱壳工具下载及使用:UPX  ida分析&amp;ensp;&amp;ensp;解读源码易得：flag{HappyNewYear!}  xor 查看文件信息   ida分析  这里发现">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Xkeo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="目录  新年快乐 xor helloword reverse3  新年快乐 查壳   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;可以看到这是一个带壳的32位exe文件  脱壳  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;脱壳工具下载及使用:UPX  ida分析&amp;ensp;&amp;ensp;解读源码易得：flag{HappyNewYear!}  xor 查看文件信息   ida分析  这里发现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BUUCTF刷题2">
 <meta property="og:url" content="http://kk-blog.top/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/index.html">
@@ -28,83 +37,255 @@
 <meta property="article:modified_time" content="2023-01-17T09:39:50.708Z">
 <meta property="article:author" content="Xkeo">
 <meta property="article:tag" content="Reverse">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://c2.im5i.com/2023/01/11/YdsR2.png">
   
-    <link rel="alternate" href="/atom.xml" title="Xkeo&#39;s Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <title>BUUCTF刷题2 - Xkeo&#39;s Blog</title>
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"kk-blog.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
 <meta name="generator" content="Hexo 5.4.2"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Xkeo&#39;s Blog</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="BUUCTF刷题2"></span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-11 14:00" pubdate>
+          2023年1月11日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          1.1k words
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kk-blog.top"></form>
+        
+          10 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-BUUCTF刷题2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" class="article-date">
-  <time datetime="2023-01-11T06:00:00.000Z" itemprop="datePublished">2023-01-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CTF/">CTF</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      BUUCTF刷题2
-    </h1>
-  
+</div>
 
-      </header>
+  </header>
+
+  <main>
     
-    <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>目录</strong></p>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BUUCTF刷题2</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>目录</strong></p>
 <ul>
 <li><a href="#%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90">新年快乐</a></li>
 <li><a href="#xor">xor</a></li>
@@ -114,199 +295,418 @@
 <h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><ol>
 <li>查壳</li>
 </ol>
-<p><img src="https://c2.im5i.com/2023/01/11/YdsR2.png"></p>
+<p><img src="https://c2.im5i.com/2023/01/11/YdsR2.png" srcset="/img/loading.gif" lazyload></p>
 <p>&ensp;&ensp;&ensp;&ensp;可以看到这是一个带壳的32位exe文件</p>
 <ol start="2">
 <li>脱壳</li>
 </ol>
-<p>&ensp;&ensp;&ensp;&ensp;脱壳工具下载及使用:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43633973/article/details/102573376?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167342003116800182793338%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167342003116800182793338&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-102573376-null-null.142%5Ev70%5Ejs_top,201%5Ev4%5Eadd_ask&utm_term=upx%E4%B8%8B%E8%BD%BD&spm=1018.2226.3001.4187">UPX</a><br><img src="https://c2.im5i.com/2023/01/11/YdEpP.png"></p>
+<p>&ensp;&ensp;&ensp;&ensp;脱壳工具下载及使用:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43633973/article/details/102573376?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167342003116800182793338%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167342003116800182793338&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-102573376-null-null.142%5Ev70%5Ejs_top,201%5Ev4%5Eadd_ask&utm_term=upx%E4%B8%8B%E8%BD%BD&spm=1018.2226.3001.4187">UPX</a><br><img src="https://c2.im5i.com/2023/01/11/YdEpP.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="3">
-<li>ida分析<br><img src="https://c2.im5i.com/2023/01/11/YdbKD.png"><br>&ensp;&ensp;解读源码易得：flag{HappyNewYear!}</li>
+<li>ida分析<br><img src="https://c2.im5i.com/2023/01/11/YdbKD.png" srcset="/img/loading.gif" lazyload><br>&ensp;&ensp;解读源码易得：flag{HappyNewYear!}</li>
 </ol>
 <h1 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h1><ol>
-<li><p>查看文件信息<br> <img src="https://c2.im5i.com/2023/01/17/YUPoS.png"></p>
+<li><p>查看文件信息<br> <img src="https://c2.im5i.com/2023/01/17/YUPoS.png" srcset="/img/loading.gif" lazyload></p>
 </li>
-<li><p>ida分析<br> <img src="https://c2.im5i.com/2023/01/17/YUVML.png"><br> 这里发现输入的字符串被修改过，修改后正确的字符串和global一致</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__data:0000000100001050 _global         dq offset aFKWOXZUPFVMDGH</span><br><span class="line"></span><br><span class="line">__cstring:0000000100000F6E aFKWOXZUPFVMDGH db &#x27;f&#x27;,0Ah              ; DATA XREF: __data:_global↓o</span><br><span class="line">__cstring:0000000100000F6E                 db &#x27;k&#x27;,0Ch,&#x27;w&amp;O.@&#x27;,11h,&#x27;x&#x27;,0Dh,&#x27;Z;U&#x27;,11h,&#x27;p&#x27;,19h,&#x27;F&#x27;,1Fh,&#x27;v&quot;M#D&#x27;,0Eh,&#x27;g&#x27;</span><br><span class="line">__cstring:0000000100000F6E                 db 6,&#x27;h&#x27;,0Fh,&#x27;G2O&#x27;,0</span><br></pre></td></tr></table></figure></li>
+<li><p>ida分析<br> <img src="https://c2.im5i.com/2023/01/17/YUVML.png" srcset="/img/loading.gif" lazyload><br> 这里发现输入的字符串被修改过，修改后正确的字符串和global一致</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sqf"><span class="hljs-variable">__data</span>:<span class="hljs-number">0000000100001050</span> <span class="hljs-variable">_global</span>         dq offset aFKWOXZUPFVMDGH<br><br><span class="hljs-variable">__cstring</span>:<span class="hljs-number">0000000100000</span>F6E aFKWOXZUPFVMDGH db <span class="hljs-string">&#x27;f&#x27;</span>,<span class="hljs-number">0</span>Ah              ; DATA XREF: <span class="hljs-variable">__data</span>:<span class="hljs-variable">_global</span>↓o<br><span class="hljs-variable">__cstring</span>:<span class="hljs-number">0000000100000</span>F6E                 db <span class="hljs-string">&#x27;k&#x27;</span>,<span class="hljs-number">0</span>Ch,<span class="hljs-string">&#x27;w&amp;O.@&#x27;</span>,<span class="hljs-number">11</span>h,<span class="hljs-string">&#x27;x&#x27;</span>,<span class="hljs-number">0</span>Dh,<span class="hljs-string">&#x27;Z;U&#x27;</span>,<span class="hljs-number">11</span>h,<span class="hljs-string">&#x27;p&#x27;</span>,<span class="hljs-number">19</span>h,<span class="hljs-string">&#x27;F&#x27;</span>,<span class="hljs-number">1</span>Fh,<span class="hljs-string">&#x27;v&quot;M#D&#x27;</span>,<span class="hljs-number">0</span>Eh,<span class="hljs-string">&#x27;g&#x27;</span><br><span class="hljs-variable">__cstring</span>:<span class="hljs-number">0000000100000</span>F6E                 db <span class="hljs-number">6</span>,<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-number">0</span>Fh,<span class="hljs-string">&#x27;G2O&#x27;</span>,<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="https://c2.im5i.com/2023/01/17/YUfdt.png"><br>得到flag{QianQiuWanDai_YiTongJiangHu}</p>
+<p><img src="https://c2.im5i.com/2023/01/17/YUfdt.png" srcset="/img/loading.gif" lazyload><br>得到flag{QianQiuWanDai_YiTongJiangHu}</p>
 <h1 id="helloword"><a href="#helloword" class="headerlink" title="helloword"></a>helloword</h1><ol>
-<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUlXq.png"><br>这是一个安卓的文件</p>
+<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUlXq.png" srcset="/img/loading.gif" lazyload><br>这是一个安卓的文件</p>
 </li>
 <li><p>jadx分析</p>
 </li>
 </ol>
 <p>&ensp;&ensp;&ensp;&ensp;<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36735003/article/details/117445597?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167393878716800182721033%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167393878716800182721033&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-117445597-null-null.142%5Ev71%5Econtrol_1,201%5Ev4%5Eadd_ask&utm_term=jadx%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&spm=1018.2226.3001.4187">jadx下载与安装</a></p>
-<p><img src="https://c2.im5i.com/2023/01/17/YUr0m.png"></p>
+<p><img src="https://c2.im5i.com/2023/01/17/YUr0m.png" srcset="/img/loading.gif" lazyload></p>
 <p>找到flag{7631a988259a00816deda84afb29430a}</p>
 <h1 id="reverse3"><a href="#reverse3" class="headerlink" title="reverse3"></a>reverse3</h1><ol>
-<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUHXW.png"><br>32位无壳exe文件</p>
+<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUHXW.png" srcset="/img/loading.gif" lazyload><br>32位无壳exe文件</p>
 </li>
 <li><p>ida分析</p>
 </li>
 </ol>
-<p><img src="https://c2.im5i.com/2023/01/17/YUjDG.png"><br>程序流程：首先输入一串字符串，然后sub_4110BE进行处理，而后经过for处理，得到str2.</p>
+<p><img src="https://c2.im5i.com/2023/01/17/YUjDG.png" srcset="/img/loading.gif" lazyload><br>程序流程：首先输入一串字符串，然后sub_4110BE进行处理，而后经过for处理，得到str2.</p>
 <p>所以想得到flag,只需要倒着来一遍就好.</p>
 <p>找到str2：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.data:0041A034 Str2            db &#x27;e3nifIH9b_C@n@dH&#x27;,0 </span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">.da<span class="hljs-symbol">ta:0041</span>A034 Str2            <span class="hljs-built_in">db</span> &#x27;e3nifIH9b_C@<span class="hljs-built_in">n</span>@dH&#x27;,<span class="hljs-number">0</span> <br></code></pre></td></tr></table></figure>
 
 <p>str2处理后：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2lfbDB2ZV95b3V9</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">e2lfbDB2ZV95b3V9<br></code></pre></td></tr></table></figure>
 
 <p>那么我们就只需要知道sub_4110BE是什么加密函数就好了</p>
 <p>我们在string window中看到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.rdata:00417B30	00000042	C  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">.rdata:<span class="hljs-number">00417B30</span>	<span class="hljs-number">00000042</span>	C  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=<br></code></pre></td></tr></table></figure>
 
 <p>这是base64编码的标志，故盲猜是base64编码</p>
 <p><a target="_blank" rel="noopener" href="https://tool.hiofd.com/base64-online/">base64在线解码</a>得：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;i_l0ve_you&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="hljs-template-variable">&#123;i_l0ve_you&#125;</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" data-id="cldq33s730005kwt4ckf7dxi3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li></ul>
 
-    </footer>
-  </div>
+<span class="category-chains">
+  
   
     
-<nav id="article-nav">
+      <span class="category-chain">
+        
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
   
-    <a href="/2023/01/17/%E4%BA%8C%E5%88%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          二分
-        
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Reverse/">#Reverse</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>BUUCTF刷题2</div>
+      <div>http://kk-blog.top/2023/01/11/BUUCTF刷题2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Xkeo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>2023年1月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/17/%E4%BA%8C%E5%88%86/" title="二分">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">二分</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" title="sort函数笔记">
+                        <span class="hidden-mobile">sort函数笔记</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">sort函数笔记</div>
-    </a>
-  
-</nav>
+    </div>
 
-  
-</article>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/">程序设计竞赛</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li></ul>
+
+
+  </aside>
+
+
     </div>
   </div>
+</div>
+
+
+
 
 
   
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag">模拟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" rel="tag">高精度</a></li></ul>
-    </div>
-  </div>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Reverse/" style="font-size: 20px;">Reverse</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 20px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">操作系统</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 10px;">模拟</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 10px;">蓝桥杯</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 10px;">高精度</a>
-    </div>
-  </div>
-
-  
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li></ul>
-    </div>
-  </div>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/04/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/">第十一届蓝桥杯B组</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">前驱图与程序设计</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/">操作系统引论</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/17/%E4%BA%8C%E5%88%86/">二分</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Xkeo<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
 
 
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
 
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
-<script src="/js/script.js"></script>
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
+  
 
-
-  </div>
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

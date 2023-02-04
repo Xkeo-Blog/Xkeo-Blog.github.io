@@ -1,886 +1,929 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
 
+
+<!DOCTYPE html>
+<html lang="zh-cn" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Xkeo&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Xkeo">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Xkeo&#39;s Blog">
 <meta property="og:url" content="http://kk-blog.top/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Xkeo">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Xkeo&#39;s Blog" type="application/atom+xml">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="icon" href="/favicon.png">
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <title>Xkeo&#39;s Blog</title>
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"kk-blog.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
 <meta name="generator" content="Hexo 5.4.2"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Xkeo&#39;s Blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kk-blog.top"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/02/04/hello-world/" class="article-date">
-  <time datetime="2023-02-04T11:40:10.281Z" itemprop="datePublished">2023-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/02/04/hello-world/" data-id="cldq33s6z0001kwt40pyegvom" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第十一届蓝桥杯B组" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/" class="article-date">
-  <time datetime="2023-01-30T11:26:00.000Z" itemprop="datePublished">2023-01-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/">程序设计竞赛</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/">第十一届蓝桥杯B组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="试题A-门牌制作"><a href="#试题A-门牌制作" class="headerlink" title="试题A 门牌制作"></a>试题A 门牌制作</h2><p>【问题描述】小蓝要为一条街的住户制作门牌号。这条街一共有 2020 位住户，门牌号从 1 到 2020 编号。小蓝制作门牌的方法是先制作 0 到 9 这几个数字字符，最后根据需要将字符粘贴到门牌上，例如门牌 1017 需要依次粘贴字符 1、 0、 1、 7，即需要 1 个字符 0， 2 个字符 1， 1 个字符 7。<br>请问要制作所有的 1 到 2020 号门牌，总共需要多少个字符 2？</p>
-<h2 id="试题B-既约分数"><a href="#试题B-既约分数" class="headerlink" title="试题B 既约分数"></a>试题B 既约分数</h2><p>【问题描述】如果一个分数的分子和分母的最大公约数是1，这个分数称为既约分数。例如，3/4 , 5/2 , 1/8 , 7/1都是既约分数。请问，有多少个既约分数，分子和分母都是1 到2020 之间的整数（包括1和2020）？</p>
-<h2 id="试题C-蛇形填数"><a href="#试题C-蛇形填数" class="headerlink" title="试题C 蛇形填数"></a>试题C 蛇形填数</h2><p>【问题描述】 如下图所示，小明用从1 开始的正整数“蛇形”填充无限大的矩阵。容易看出矩阵第二行第二列中的数是5。请你计算矩阵中第20 行第20 列的数是多少？<br><img src="https://img-blog.csdnimg.cn/20210121142514104.png#pic_center">  </p>
-<h2 id="试题D-跑步训练"><a href="#试题D-跑步训练" class="headerlink" title="试题D 跑步训练"></a>试题D 跑步训练</h2><p>【问题描述】小蓝每天都锻炼身体。<br>正常情况下，小蓝每天跑 1 千米。如果某天是周一或者月初（1 日），为了激励自己，小蓝要跑 2 千米。如果同时是周一或月初，小蓝也是跑 2 千米。小蓝跑步已经坚持了很长时间，从 2000 年 1 月 1 日周六（含）到 2020 年10 月 1 日周四（含）。请问这段时间小蓝总共跑步多少千米？</p>
-<h2 id="试题E-七段码"><a href="#试题E-七段码" class="headerlink" title="试题E 七段码"></a>试题E 七段码</h2><p>【问题描述】小蓝要用七段码数码管来表示一种特殊的文字。<br><img src="https://img-blog.csdnimg.cn/20210127212137872.png#pic_center"><br>七段码上图给出了七段码数码管的一个图示，数码管中一共有7 段可以发光的二极管，分别标记为a, b, c, d, e, f, g。小蓝要选择一部分二极管（至少要有一个）发光来表达字符。在设计字符的表达时，要求所有发光的二极管是连成一片的。<br>例如：b 发光，其他二极管不发光可以用来表达一种字符。<br>例如：c 发光，其他二极管不发光可以用来表达一种字符。这种方案与上一行的方案可以用来表示不同的字符，尽管看上去比较相似。<br>例如：a, b, c, d, e 发光，f, g 不发光可以用来表达一种字符。<br>例如：b, f 发光，其他二极管不发光则不能用来表达一种字符，因为发光的二极管没有连成一片。<br>请问，小蓝可以用七段码数码管表达多少种不同的字符？</p>
-<h2 id="试题F-成绩统计"><a href="#试题F-成绩统计" class="headerlink" title="试题F 成绩统计"></a>试题F 成绩统计</h2><p>【问题描述】小蓝给学生们组织了一场考试，卷面总分为 100 分，每个学生的得分都是一个 0 到 100 的整数。如果得分至少是 60 分，则称为及格。如果得分至少为 85 分，则称为优秀。<br>请计算及格率和优秀率，用百分数表示，百分号前的部分四舍五入保留整数。</p>
-<p>【输入格式】<br>输入的第一行包含一个整数 n，表示考试人数。接下来 n 行，每行包含一个 0 至 100 的整数，表示一个学生的得分。</p>
-<p>【输出格式】<br>输出两行，每行一个百分数，分别表示及格率和优秀率。百分号前的部分四舍五入保留整数。</p>
-<p>【样例输入】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">80</span><br><span class="line">92</span><br><span class="line">56</span><br><span class="line">74</span><br><span class="line">88</span><br><span class="line">100</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
-<p>【样例输出】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">71%</span><br><span class="line">43%</span><br></pre></td></tr></table></figure>
-
-<h2 id="试题G-回文日期"><a href="#试题G-回文日期" class="headerlink" title="试题G 回文日期"></a>试题G 回文日期</h2><p>【问题描述】2020 年春节期间，有一个特殊的日期引起了大家的注意：2020年2月2日。因为如果将这个日期按“yyyymmdd” 的格式写成一个8 位数是20200202，恰好是一个回文数。我们称这样的日期是回文日期。有人表示20200202 是“千年一遇” 的特殊日子。对此小明很不认同，因为不到2年之后就是下一个回文日期：20211202 即2021年12月2日。也有人表示20200202 并不仅仅是一个回文日期，还是一个ABABBABA型的回文日期。对此小明也不认同，因为大约100 年后就能遇到下一个ABABBABA 型的回文日期：21211212 即2121 年12 月12 日。算不上“千年一遇”，顶多算“千年两遇”。给定一个8 位数的日期，请你计算该日期之后下一个回文日期和下一个ABABBABA型的回文日期各是哪一天。</p>
-<p>【输入格式】<br>输入包含一个八位整数N，表示日期。</p>
-<p>【输出格式】<br>输出两行，每行1 个八位数。第一行表示下一个回文日期，第二行表示下<br>一个ABABBABA 型的回文日期。</p>
-<p>【样例输入】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20200202</span><br></pre></td></tr></table></figure>
-
-<p>【样例输出】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">20211202</span><br><span class="line">21211212</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/" data-id="cldq33s7b000jkwt47izictz3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-前驱图与程序设计" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="article-date">
-  <time datetime="2023-01-17T11:50:00.000Z" itemprop="datePublished">2023-01-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">前驱图与程序设计</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>目录</strong></p>
-<h2 id="程序的顺序执行及其特征"><a href="#程序的顺序执行及其特征" class="headerlink" title="程序的顺序执行及其特征"></a>程序的顺序执行及其特征</h2><ol>
-<li><p>程序的顺序执行</p>
-<p> 一个程序有若干个程序段组成，而这些程序段的执行必须是顺序的，这种程序执行的方式就称为程序的顺序执行。</p>
-</li>
-<li><p>程序顺序执行时的特征</p>
-<p> <font color=#FF0000 >1. 顺序性：处理机的操作严格按照程序所规定的顺序执行。</font></p>
-<p><font color=#FF0000 >2. 封闭性：程序一旦开始执行，其结果不受外界影响。</p>
-</font>
-
-<p><font color=#FF0000 >3. 可再现性：程序执行的结果与它的执行速度无关（即与时间无关），而只与初始条件有关。</font></p>
-</li>
-</ol>
-<h2 id="前驱图"><a href="#前驱图" class="headerlink" title="前驱图"></a>前驱图</h2><p>前驱图是有向无循环图 （DAG），用于描述进程之间执行的前后关系。
-
-<pre><code>结点：表示一个程序段或进程，或一条语句
-有向边：结点之间的偏序或前序关系“—&gt;”
-若（pi,pj）∈ —&gt;，记为pi—&gt;pj，则pi是pj的直接前驱，pj是pi的直接后继
-</code></pre>
-<h2 id="程序的并发执行及其特征"><a href="#程序的并发执行及其特征" class="headerlink" title="程序的并发执行及其特征"></a>程序的并发执行及其特征</h2><p>    程序并发执行时的特征
-
-<ol>
-<li><p>间断性——在多道程序设计的环境下，程序并发执行，以及为完成一项任务而相互合作，这些程序之间要共享系统的资源，形成相互制约的关系。</p>
-</li>
-<li><p>失去封闭性——程序在并发执行时，系统的资源状态由多道程序来改变，程序运行失去封闭性。程序的运行受到其他程序的影响。</p>
-</li>
-<li><p>不可再现性——程序在并发执行时，多次运行初始条件相同的同一程序会得出不同的运行结果。</p>
-<pre><code> 为什么要引入进程？
- 答：为了使程序在并发执行时依然保持顺序性、封闭性和可再现性。
-</code></pre>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" data-id="cldq33s74000akwt40108de2x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-操作系统引论" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/" class="article-date">
-  <time datetime="2023-01-17T11:50:00.000Z" itemprop="datePublished">2023-01-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/">操作系统引论</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>目录</strong></p>
-<ul>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%B9%89">操作系统定义</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%9C%B0%E4%BD%8D">操作系统在计算机中的地位</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%AE%E6%A0%87">操作系统目标</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%9C%E7%94%A8">操作系统的作用</a></li>
-<li><a href="#%E6%8E%A8%E5%8A%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%91%E5%B1%95%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%A8%E5%8A%9B">推动操作系统发展的主要动力</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E8%BF%87%E7%A8%8B">操作系统的发展过程</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81">操作系统的基本特征</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD">操作系统的主要功能</a></li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">操作系统结构设计</a></li>
-</ul>
-<h2 id="操作系统定义"><a href="#操作系统定义" class="headerlink" title="操作系统定义"></a>操作系统定义</h2><p><font color=#FF0000 >OS是直接控制和管理计算机硬件、软件资源，合理地对各类作业进行调度，以方便用户使用地程序集合。</font>
-
-<h2 id="操作系统在计算机中的地位"><a href="#操作系统在计算机中的地位" class="headerlink" title="操作系统在计算机中的地位"></a>操作系统在计算机中的地位</h2><p> 应用软件 -> 操作系统 -> 裸机。
-
-<h2 id="操作系统目标"><a href="#操作系统目标" class="headerlink" title="操作系统目标"></a>操作系统目标</h2><ol>
-<li>高效性</li>
-<li>方便性</li>
-<li>可扩充性</li>
-<li>开放性、</li>
-</ol>
-<h2 id="操作系统的作用"><a href="#操作系统的作用" class="headerlink" title="操作系统的作用"></a>操作系统的作用</h2><ol>
-<li>作为用户和计算机间的接口————<font color=#008000 >用户通过系统调用、命令和图标或窗口三种方式来使用计算机。</font></li>
-<li>作为计算机系统资源的管理者。</li>
-<li>实现计算机资源的抽象。</li>
-</ol>
-<h2 id="推动操作系统发展的主要动力"><a href="#推动操作系统发展的主要动力" class="headerlink" title="推动操作系统发展的主要动力"></a>推动操作系统发展的主要动力</h2><ol>
-<li>不断提高计算机资源的利用率。</li>
-<li>方便用户。</li>
-<li>元器件的不断更新换代。</li>
-<li>计算机体系结构的不断发展。</li>
-</ol>
-<h2 id="操作系统的发展过程"><a href="#操作系统的发展过程" class="headerlink" title="操作系统的发展过程"></a>操作系统的发展过程</h2><ol>
-<li>无OS时期————人工操作方式和脱机I/O方式</li>
-<li>有OS时期————批处理系统、分时系统和实时系统<br><img src="https://c2.im5i.com/2023/01/17/YUZ21.png"></li>
-</ol>
-<h2 id="操作系统的基本特征"><a href="#操作系统的基本特征" class="headerlink" title="操作系统的基本特征"></a>操作系统的基本特征</h2><ol>
-<li><p>并发</p>
-<p> 并发：指两个或多个事件在同一时间间隔内发生。</p>
-<p> 并行：两个或多个事件在同一时刻发生。</p>
-</li>
-<li><p>共享</p>
-<p> 指系统中的资源供内存中的多道程序所共同使用。</p>
-<p> 分类：</p>
-<pre><code> 互斥共享方式：例 打印机
-
- 同时访问方式：例 磁盘
-</code></pre>
-</li>
-<li><p>虚拟技术</p>
-<p> 指通过某种技术把一个物理实体变成若干个逻辑上的对应物。</p>
-<pre><code>1. 时分复用：把cpu的时间片分成很多小时间片轮流为多个用户服务
-2. 空分复用：把空间分成多个小部分
-</code></pre>
-</li>
-<li><p>异步性</p>
-<p> 系统中并发执行的多道程序“走走停停”，以不可预知的速度向前推进 </p>
-</li>
-</ol>
-<h2 id="操作系统的主要功能"><a href="#操作系统的主要功能" class="headerlink" title="操作系统的主要功能"></a>操作系统的主要功能</h2><ol>
-<li>处理机管理功能————进程控制、进程同步、进程通信、进程调度</li>
-<li>存储器管理功能————内存分配、内存保护、地址映射、内存扩充</li>
-<li>设备管理————缓冲管理、设备分配</li>
-<li>文件管理————文件存储空间管理、目录管理、文件的读/写管理和保护</li>
-</ol>
-<h2 id="操作系统结构设计"><a href="#操作系统结构设计" class="headerlink" title="操作系统结构设计"></a>操作系统结构设计</h2><ol>
-<li><p>传统的操作系统</p>
-<p> 一、无结构操作系统</p>
-<p> 二、模块化操作系统结构</p>
-<p> 三、分层式操作系统结构</p>
-</li>
-<li><p>现代操作系统结构————微内核的OS结构</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/" data-id="cldq33s79000gkwt4acmvb5r3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-二分" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/17/%E4%BA%8C%E5%88%86/" class="article-date">
-  <time datetime="2023-01-17T02:25:00.000Z" itemprop="datePublished">2023-01-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/17/%E4%BA%8C%E5%88%86/">二分</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p>  二分查找也称折半查找，就是在一个有序的数组中，每一次查找都去掉一半区间，直到找到合适的答案。</p>
-<p>  例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2249">洛谷 P2249</a></p>
-<p>  AC code：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, m, num,a[<span class="number">1000010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> l = <span class="number">1</span>, r = n + <span class="number">1</span>, mid;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a[l] != x) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; num;</span><br><span class="line">        cout &lt;&lt; <span class="built_in">BinarySearch</span>(num) &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="二分答案"><a href="#二分答案" class="headerlink" title="二分答案"></a>二分答案</h1><p>  读懂题意，上模板即可，难点在check函数怎么写，解决了check也就基本完成了。</p>
-<h1 id="二分模板"><a href="#二分模板" class="headerlink" title="二分模板"></a>二分模板</h1><h2 id="模板一"><a href="#模板一" class="headerlink" title="模板一"></a>模板一</h2><pre><code>适用情形：求······的最大值
-</code></pre>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断函数</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    函数内的代码自己补充</span></span><br><span class="line"><span class="comment">    判断函数一般是题目的核心</span></span><br><span class="line"><span class="comment">    不同的题目函数里的内容也不一样</span></span><br><span class="line"><span class="comment">    需要自己思考</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//二分搜索</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid))</span><br><span class="line">            l = mid;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>例题：[洛谷 P2678](https://www.luogu.com.cn/problem/P2678)
-</code></pre>
-<h2 id="模板二"><a href="#模板二" class="headerlink" title="模板二"></a>模板二</h2><pre><code>适用情形：求······的最小值
-</code></pre>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    函数内的代码自己补充</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//二分搜索</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>; </span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid))</span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>例题：[洛谷 P1182](https://www.luogu.com.cn/problem/P1182)
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/17/%E4%BA%8C%E5%88%86/" data-id="cldq33s720004kwt4hwkl0k6e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-BUUCTF刷题2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" class="article-date">
-  <time datetime="2023-01-11T06:00:00.000Z" itemprop="datePublished">2023-01-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CTF/">CTF</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/">BUUCTF刷题2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>目录</strong></p>
-<ul>
-<li><a href="#%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90">新年快乐</a></li>
-<li><a href="#xor">xor</a></li>
-<li><a href="#helloword">helloword</a></li>
-<li><a href="#reverse3">reverse3</a></li>
-</ul>
-<h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><ol>
-<li>查壳</li>
-</ol>
-<p><img src="https://c2.im5i.com/2023/01/11/YdsR2.png"></p>
-<p>&ensp;&ensp;&ensp;&ensp;可以看到这是一个带壳的32位exe文件</p>
-<ol start="2">
-<li>脱壳</li>
-</ol>
-<p>&ensp;&ensp;&ensp;&ensp;脱壳工具下载及使用:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43633973/article/details/102573376?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167342003116800182793338%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167342003116800182793338&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-102573376-null-null.142%5Ev70%5Ejs_top,201%5Ev4%5Eadd_ask&utm_term=upx%E4%B8%8B%E8%BD%BD&spm=1018.2226.3001.4187">UPX</a><br><img src="https://c2.im5i.com/2023/01/11/YdEpP.png"></p>
-<ol start="3">
-<li>ida分析<br><img src="https://c2.im5i.com/2023/01/11/YdbKD.png"><br>&ensp;&ensp;解读源码易得：flag{HappyNewYear!}</li>
-</ol>
-<h1 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h1><ol>
-<li><p>查看文件信息<br> <img src="https://c2.im5i.com/2023/01/17/YUPoS.png"></p>
-</li>
-<li><p>ida分析<br> <img src="https://c2.im5i.com/2023/01/17/YUVML.png"><br> 这里发现输入的字符串被修改过，修改后正确的字符串和global一致</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__data:0000000100001050 _global         dq offset aFKWOXZUPFVMDGH</span><br><span class="line"></span><br><span class="line">__cstring:0000000100000F6E aFKWOXZUPFVMDGH db &#x27;f&#x27;,0Ah              ; DATA XREF: __data:_global↓o</span><br><span class="line">__cstring:0000000100000F6E                 db &#x27;k&#x27;,0Ch,&#x27;w&amp;O.@&#x27;,11h,&#x27;x&#x27;,0Dh,&#x27;Z;U&#x27;,11h,&#x27;p&#x27;,19h,&#x27;F&#x27;,1Fh,&#x27;v&quot;M#D&#x27;,0Eh,&#x27;g&#x27;</span><br><span class="line">__cstring:0000000100000F6E                 db 6,&#x27;h&#x27;,0Fh,&#x27;G2O&#x27;,0</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="https://c2.im5i.com/2023/01/17/YUfdt.png"><br>得到flag{QianQiuWanDai_YiTongJiangHu}</p>
-<h1 id="helloword"><a href="#helloword" class="headerlink" title="helloword"></a>helloword</h1><ol>
-<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUlXq.png"><br>这是一个安卓的文件</p>
-</li>
-<li><p>jadx分析</p>
-</li>
-</ol>
-<p>&ensp;&ensp;&ensp;&ensp;<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36735003/article/details/117445597?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167393878716800182721033%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167393878716800182721033&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-117445597-null-null.142%5Ev71%5Econtrol_1,201%5Ev4%5Eadd_ask&utm_term=jadx%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&spm=1018.2226.3001.4187">jadx下载与安装</a></p>
-<p><img src="https://c2.im5i.com/2023/01/17/YUr0m.png"></p>
-<p>找到flag{7631a988259a00816deda84afb29430a}</p>
-<h1 id="reverse3"><a href="#reverse3" class="headerlink" title="reverse3"></a>reverse3</h1><ol>
-<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUHXW.png"><br>32位无壳exe文件</p>
-</li>
-<li><p>ida分析</p>
-</li>
-</ol>
-<p><img src="https://c2.im5i.com/2023/01/17/YUjDG.png"><br>程序流程：首先输入一串字符串，然后sub_4110BE进行处理，而后经过for处理，得到str2.</p>
-<p>所以想得到flag,只需要倒着来一遍就好.</p>
-<p>找到str2：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.data:0041A034 Str2            db &#x27;e3nifIH9b_C@n@dH&#x27;,0 </span><br></pre></td></tr></table></figure>
-
-<p>str2处理后：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2lfbDB2ZV95b3V9</span><br></pre></td></tr></table></figure>
-
-<p>那么我们就只需要知道sub_4110BE是什么加密函数就好了</p>
-<p>我们在string window中看到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.rdata:00417B30	00000042	C  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=</span><br></pre></td></tr></table></figure>
-
-<p>这是base64编码的标志，故盲猜是base64编码</p>
-<p><a target="_blank" rel="noopener" href="https://tool.hiofd.com/base64-online/">base64在线解码</a>得：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;i_l0ve_you&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" data-id="cldq33s730005kwt4ckf7dxi3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sort()函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" class="article-date">
-  <time datetime="2023-01-11T04:26:00.000Z" itemprop="datePublished">2023-01-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/">sort函数笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="sort-简介"><a href="#sort-简介" class="headerlink" title="sort()简介"></a>sort()简介</h1><h2 id="sort-函数的实现原理"><a href="#sort-函数的实现原理" class="headerlink" title="sort()函数的实现原理"></a>sort()函数的实现原理</h2><p>sort并不是简单的快速排序，它对快速排序进行了优化，还结合了插入排序和堆排序。根据不同的数量级以及不同情况，能自动选择合适的排序方法。</p>
-<p>源码可参考文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/503795945">https://zhuanlan.zhihu.com/p/503795945</a></p>
-<h2 id="为什么选择使用sort"><a href="#为什么选择使用sort" class="headerlink" title="为什么选择使用sort()?"></a>为什么选择使用sort()?</h2><p>在刷题碰到排序问题时，如果不用sort()函数，可能就必须自己写排序算法，首先，我们要选择合适的<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42711189/article/details/116351162?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167340065016782425198155%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167340065016782425198155&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-116351162-null-null.142%5Ev70%5Ejs_top,201%5Ev4%5Eadd_ask&utm_term=%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95&spm=1018.2226.3001.4187">排序算法</a>，然后自己实现，感觉这样很浪费时间；其次，个人觉得sort()大多数时候都比自己实现的代码更快，并且更实用QAQ。</p>
-<h1 id="sort-函数的使用"><a href="#sort-函数的使用" class="headerlink" title="sort()函数的使用"></a>sort()函数的使用</h1><h2 id="1-基本使用方法"><a href="#1-基本使用方法" class="headerlink" title="1. 基本使用方法"></a>1. 基本使用方法</h2><p>需要用到的头文件：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>algorithm详细可参考：<a target="_blank" rel="noopener" href="https://cplusplus.com/reference/algorithm/?kw=algorithm">https://cplusplus.com/reference/algorithm/?kw=algorithm</a></p>
-<p>sort(begin, end, cmp)：begin:第一个函数指针， end为最后一个元素的下一个指针，cmp：排序准则，可以不填，sort默认从小到大排序。如果想从大到小排序，可以在cmp处填写greater&#60;int&#62; ()，int可以换成其他基本数据类型，如：float，double。</p>
-<h2 id="2-cmp排序准则"><a href="#2-cmp排序准则" class="headerlink" title="2. cmp排序准则"></a>2. cmp排序准则</h2><p>首先，函数定义：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt; y;<span class="comment">//以从大到小的准则排序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后，传入sort()</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt; y;<span class="comment">//以从大到小的准则排序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">5</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(a, a + <span class="number">5</span>, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">        cout &lt;&lt; a[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="comment">//结果：4 3 2 1 0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-对结构体排序"><a href="#3-对结构体排序" class="headerlink" title="3. 对结构体排序"></a>3. 对结构体排序</h2><p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1093">洛谷 P1093</a></p>
-<p>题解：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">student</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> id, total, chinese;</span><br><span class="line">&#125;a[<span class="number">300</span>];</span><br><span class="line"><span class="comment">//排序准则</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cmp</span><span class="params">(student a, student b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.total == b.total)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a.chinese == b.chinese)</span><br><span class="line">            <span class="keyword">return</span> a.id &lt; b.id;</span><br><span class="line">        <span class="keyword">return</span> a.chinese &gt; b.chinese;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a.total &gt; b.total;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> math, english;</span><br><span class="line">    <span class="type">int</span> n; cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i].chinese &gt;&gt; math &gt;&gt; english;</span><br><span class="line">        a[i].total = a[i].chinese + math + english;</span><br><span class="line">        a[i].id = i + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a, a + n, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">        cout &lt;&lt; a[i].id &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; a[i].total &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/11/sort()%E5%87%BD%E6%95%B0/" data-id="cldq33s730006kwt484z83qk8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快速排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time datetime="2023-01-11T03:42:00.000Z" itemprop="datePublished">2023-01-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-快排的原理"><a href="#1-快排的原理" class="headerlink" title="1.快排的原理"></a>1.快排的原理</h1><p>基本思想：</p>
-<ol>
-<li>先从数列中取出一个数作为基准数(key)；</li>
-<li>分区，将比key大的全部放到它的右边，比key小的全部放在它的右边；</li>
-<li>再对左右区间重复该步骤。</li>
-</ol>
-<h1 id="2-代码思路"><a href="#2-代码思路" class="headerlink" title="2.代码思路"></a>2.代码思路</h1><p>关键代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quicksort</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> left, <span class="type">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//l:左边指针， r:右边指针，key:基准数</span></span><br><span class="line">	<span class="type">int</span> l = left, r = right, key = a[(left + right) / <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (a[l] &lt; key) l++;</span><br><span class="line">		<span class="keyword">while</span> (a[r] &gt; key) r--;</span><br><span class="line">		<span class="keyword">if</span> (l &lt;= r)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> tmp = a[l];</span><br><span class="line">			a[l] = a[r];</span><br><span class="line">			a[r] = tmp;</span><br><span class="line">			l++, r--;<span class="comment">//更新指针(感觉这很容易忘)</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">while</span> (l &lt;= r);</span><br><span class="line">	<span class="keyword">if</span> (l &lt; right) <span class="built_in">quicksort</span>(a, l, right);</span><br><span class="line">	<span class="keyword">if</span> (r &gt; left)  <span class="built_in">quicksort</span>(a, left, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1177">洛谷 P1177</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cldq33s75000ckwt47n620vur" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-BUUCTF刷题1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/" class="article-date">
-  <time datetime="2023-01-05T03:26:00.000Z" itemprop="datePublished">2023-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CTF/">CTF</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/">BUUCTF刷题1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>目录</strong></p>
-<ul>
-<li><a href="#easyre">easyre</a></li>
-<li><a href="#reverse1">reverse1</a></li>
-<li><a href="#reverse2">reverse2</a></li>
-<li><a href="#%E5%86%85%E6%B6%B5%E7%9A%84%E8%BD%AF%E4%BB%B6">内涵的软件</a></li>
-</ul>
-<h1 id="easyre"><a href="#easyre" class="headerlink" title="easyre"></a>easyre</h1><ol>
-<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSuLn.png">]<br>可以看到这是一个无壳的64位EXE文件。</p>
-</li>
-<li><p>ida分析<br>Ctrl + f搜索一下main函数：<br><img src="https://c2.im5i.com/2023/01/06/YSHvl.png"><br>找到main块F5生成伪代码，找到flag：<br><img src="https://c2.im5i.com/2023/01/06/YSjE7.png"> </p>
-</li>
-</ol>
-<h1 id="reverse1"><a href="#reverse1" class="headerlink" title="reverse1"></a>reverse1</h1><ol>
-<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSTZ2.png"><br>可以看到是64位EXE文件 无壳</p>
-</li>
-<li><p>ida分析<br>shift + f12查看字符串：<br><img src="https://c2.im5i.com/2023/01/06/YSXFP.png"><br>可疑字符串：<br><img src="https://c2.im5i.com/2023/01/06/YS2rD.png"><br>我们跟踪查看下：<br><img src="https://c2.im5i.com/2023/01/06/YS9Rj.png"><br>分析可知str2就是我们要找的flag，但是str2比较之前被改变了一下：<br><img src="https://c2.im5i.com/2023/01/06/YSRpS.png"><br>我们点击111和48，按r:<br><img src="https://c2.im5i.com/2023/01/06/YSnKL.png"><br>分析可知：这串代码是把str2中的’o’变成了’0’,那么我们就需要把str2的初值中的’o’变为’0’即得flag<br>那么我们查看str2初值(直接点击即可)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.data:000000014001C000 Str2            db &#x27;&#123;hello_world&#125;&#x27;</span><br></pre></td></tr></table></figure>
-<p>易得flag{hell0_w0rld}</p>
-</li>
-</ol>
-<h1 id="reverse2"><a href="#reverse2" class="headerlink" title="reverse2"></a>reverse2</h1><ol>
-<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSojt.png"><br>是一个elf文件，可拖入ida64分析</p>
-</li>
-<li><p>ida分析<br>f5：<br><img src="https://c2.im5i.com/2023/01/06/YS3eq.png"><br>这里我把char类型的数字转为了字符(对着数字按r即可)<br>分析：<br>flag在比较之前被更改过，之前所有字符i和r都被换成了1<br>我们也只需要把原字符模拟改变一次即可<br>查看flag:  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.data:0000000000601080 flag            db 7Bh                  ; DATA XREF: main+34↑r</span><br><span class="line">.data:0000000000601080                                         ; main+44↑r ...</span><br><span class="line">.data:0000000000601081 aHackingForFun  db &#x27;hacking_for_fun&#125;&#x27;,0</span><br></pre></td></tr></table></figure>
-<p>7Bh是{<br>正确的flag：{hack1ng_fo1_fun}</p>
-</li>
-</ol>
-<h1 id="内涵的软件"><a href="#内涵的软件" class="headerlink" title="内涵的软件"></a>内涵的软件</h1><ol>
-<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSZvm.png"><br>32位exe文件 无壳</p>
-</li>
-<li><p>ida分析<br><img src="https://c2.im5i.com/2023/01/06/YSiUs.png"><br>找到flag：flag{49d3c93df25caad81232130f3d2ebfad}</p>
-</li>
-</ol>
-<p>额v2就是flag真是我没想到的，还找了半天结果用v2试了一下过了😂</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/" data-id="cldq33s6t0000kwt403k3htv1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-模拟" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/05/%E6%A8%A1%E6%8B%9F/" class="article-date">
-  <time datetime="2023-01-05T03:26:00.000Z" itemprop="datePublished">2023-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/05/%E6%A8%A1%E6%8B%9F/">模拟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h1><h2 id="1-什么是模拟？"><a href="#1-什么是模拟？" class="headerlink" title="1. 什么是模拟？"></a>1. 什么是模拟？</h2><p>模拟故名思意就是按照题目的要求，一步步写出代码。<br>特点：模拟题目通常码量比较大、操作多、思路繁复的特点。并且由于码量比较大，很难查错。</p>
-<h2 id="2-模拟过程"><a href="#2-模拟过程" class="headerlink" title="2. 模拟过程"></a>2. 模拟过程</h2><p>从实际问题建立抽象模型，并使用合适的算法与数据结构来实现。<br>模拟的过程：  </p>
-<ol>
-<li>读题。读懂题意，知道题目想做什么。</li>
-<li>建模。利用什么样的数据结构来实现。</li>
-<li>代码实现。写出代码框架。</li>
-<li>调试、优化。</li>
-</ol>
-<h2 id="3-几道简单例题"><a href="#3-几道简单例题" class="headerlink" title="3. 几道简单例题"></a>3. 几道简单例题</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1042">洛谷 P1042</a><br>题解：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//a[]:存储分数</span></span><br><span class="line"><span class="type">int</span> a[<span class="number">25</span> * <span class="number">2500</span>], n=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> k[<span class="number">2</span>] = &#123; <span class="number">11</span>,<span class="number">21</span> &#125;;<span class="comment">//枚举11分 21分</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp;</span><br><span class="line">        <span class="keyword">if</span> (temp == <span class="string">&#x27;E&#x27;</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span> (temp == <span class="string">&#x27;W&#x27;</span>) a[n++] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (temp == <span class="string">&#x27;L&#x27;</span>) a[n++] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)<span class="comment">//枚举两种分数制</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> w = <span class="number">0</span>, l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            w += a[j]; l += <span class="number">1</span> - a[j];</span><br><span class="line">            <span class="comment">//判断是否打满11分，并且分差大于2</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">max</span>(w,l) &gt;= k[i] &amp;&amp; <span class="built_in">abs</span>(w-l) &gt;= <span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; w &lt;&lt; <span class="string">&quot;:&quot;</span> &lt;&lt; l &lt;&lt; endl;</span><br><span class="line">                w = <span class="number">0</span>, l = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; w &lt;&lt; <span class="string">&quot;:&quot;</span> &lt;&lt; l &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1563">洛谷 P1563</a><br>题解：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">people</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> d;</span><br><span class="line">    string name;</span><br><span class="line">&#125;a[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    <span class="type">int</span> n, m; cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        cin &gt;&gt; a[i].d &gt;&gt; a[i].name;</span><br><span class="line">    <span class="type">int</span> now = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (a[now].d == <span class="number">0</span> &amp;&amp; x == <span class="number">0</span>) now = (now + n - y) % n;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[now].d == <span class="number">0</span> &amp;&amp; x == <span class="number">1</span>) now = (now + y) % n;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[now].d == <span class="number">1</span> &amp;&amp; x == <span class="number">0</span>) now = (now + y) % n;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[now].d == <span class="number">1</span> &amp;&amp; x == <span class="number">1</span>) now = (now + n - y) % n;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; a[now].name &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1518">洛谷 P1518</a><br>题解：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> map[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span> cx, cy, fx, fy, dc, df;</span><br><span class="line"><span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">            cin &gt;&gt; map[i][j];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (map[i][j] == <span class="string">&#x27;C&#x27;</span>)</span><br><span class="line">                cx = i, cy = j;</span><br><span class="line">            <span class="keyword">if</span> (map[i][j] == <span class="string">&#x27;F&#x27;</span>)</span><br><span class="line">                fx = i, fy = j;</span><br><span class="line">        &#125;</span><br><span class="line">    dc = <span class="number">0</span>, df = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> ((cx != fx || cy != fy) &amp;&amp; ans &lt;= <span class="number">100000</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//对牛进行移动</span></span><br><span class="line">        <span class="keyword">if</span> (dc == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (cx - <span class="number">1</span> &lt; <span class="number">0</span> || map[cx - <span class="number">1</span>][cy] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                dc = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cx--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (dc == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (cy + <span class="number">1</span> &gt;= <span class="number">10</span> || map[cx][cy + <span class="number">1</span>] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                dc = <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cy++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (dc == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (cx + <span class="number">1</span> &gt;= <span class="number">10</span> || map[cx + <span class="number">1</span>][cy] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                dc = <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cx++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (dc == <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (cy <span class="number">-1</span> &lt; <span class="number">0</span> || map[cx][cy - <span class="number">1</span>] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                dc = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cy--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//移动farmer</span></span><br><span class="line">        <span class="keyword">if</span> (df == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (fx - <span class="number">1</span> &lt; <span class="number">0</span> || map[fx - <span class="number">1</span>][fy] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                df = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                fx--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (df == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (fy + <span class="number">1</span> &gt;= <span class="number">10</span> || map[fx][fy + <span class="number">1</span>] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                df = <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                fy++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (df == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (fx + <span class="number">1</span> &gt;= <span class="number">10</span> || map[fx + <span class="number">1</span>][fy] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                df = <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                fx++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (df == <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (fy - <span class="number">1</span> &lt; <span class="number">0</span> || map[fx][fy - <span class="number">1</span>] == <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">                df = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                fy--;</span><br><span class="line">        &#125;</span><br><span class="line">        ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans &gt; <span class="number">100000</span>)</span><br><span class="line">        cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kk-blog.top/2023/01/05/%E6%A8%A1%E6%8B%9F/" data-id="cldq33s7c000nkwt4532g7zin" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag">模拟</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/">程序设计竞赛</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reverse/" rel="tag">Reverse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag">模拟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" rel="tag">高精度</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Reverse/" style="font-size: 20px;">Reverse</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 20px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">操作系统</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 10px;">模拟</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 10px;">蓝桥杯</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 10px;">高精度</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/02/04/hello-world/">Hello World</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/">第十一届蓝桥杯B组</a>
-          </li>
         
-          <li>
-            <a href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">前驱图与程序设计</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/">操作系统引论</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/17/%E4%BA%8C%E5%88%86/">二分</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 Xkeo<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/02/04/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/02/04/hello-world/" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-02-04 19:40" pubdate>
+              2023-02-04
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/" target="_self">
+          第十一届蓝桥杯B组
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/30/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AFB%E7%BB%84/" target="_self">
+        <div>
+          试题A 门牌制作【问题描述】小蓝要为一条街的住户制作门牌号。这条街一共有 2020 位住户，门牌号从 1 到 2020 编号。小蓝制作门牌的方法是先制作 0 到 9 这几个数字字符，最后根据需要将字符粘贴到门牌上，例如门牌 1017 需要依次粘贴字符 1、 0、 1、 7，即需要 1 个字符 0， 2 个字符 1， 1 个字符 7。请问要制作所有的 1 到 2020 号门牌，总共需要多少个字符 2
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-30 19:26" pubdate>
+              2023-01-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" class="category-chain-item">程序设计竞赛</a>
   
-</nav>
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">#蓝桥杯</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+          前驱图与程序设计
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/17/%E5%89%8D%E9%A9%B1%E5%9B%BE%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+        <div>
+          目录 程序的顺序执行及其特征 程序的顺序执行  一个程序有若干个程序段组成，而这些程序段的执行必须是顺序的，这种程序执行的方式就称为程序的顺序执行。  程序顺序执行时的特征  1. 顺序性：处理机的操作严格按照程序所规定的顺序执行。 2. 封闭性：程序一旦开始执行，其结果不受外界影响。   3. 可再现性：程序执行的结果与它的执行速度无关（即与时间无关），而只与初始条件有关。   前驱图前驱图是有
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-17 19:50" pubdate>
+              2023-01-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">计算机操作系统</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/" target="_self">
+          操作系统引论
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/" target="_self">
+        <div>
+          目录  操作系统定义 操作系统在计算机中的地位 操作系统目标 操作系统的作用 推动操作系统发展的主要动力 操作系统的发展过程 操作系统的基本特征 操作系统的主要功能 操作系统结构设计  操作系统定义OS是直接控制和管理计算机硬件、软件资源，合理地对各类作业进行调度，以方便用户使用地程序集合。  操作系统在计算机中的地位 应用软件 -> 操作系统 -> 裸机。  操作系统目标 高效性 方便性 可扩充
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-17 19:50" pubdate>
+              2023-01-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">计算机操作系统</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/17/%E4%BA%8C%E5%88%86/" target="_self">
+          二分
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/17/%E4%BA%8C%E5%88%86/" target="_self">
+        <div>
+          二分查找  二分查找也称折半查找，就是在一个有序的数组中，每一次查找都去掉一半区间，直到找到合适的答案。   例题：洛谷 P2249   AC code： 12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;using namespace std;int n, m, num,a[1000010]
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-17 10:25" pubdate>
+              2023-01-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" target="_self">
+          BUUCTF刷题2
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/" target="_self">
+        <div>
+          目录  新年快乐 xor helloword reverse3  新年快乐 查壳   &ensp;&ensp;&ensp;&ensp;可以看到这是一个带壳的32位exe文件  脱壳  &ensp;&ensp;&ensp;&ensp;脱壳工具下载及使用:UPX  ida分析&ensp;&ensp;解读源码易得：flag{HappyNewYear!}  xor 查看文件信息   ida分析  这里发现
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-11 14:00" pubdate>
+              2023-01-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Reverse/">#Reverse</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" target="_self">
+          sort函数笔记
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" target="_self">
+        <div>
+          sort()简介sort()函数的实现原理sort并不是简单的快速排序，它对快速排序进行了优化，还结合了插入排序和堆排序。根据不同的数量级以及不同情况，能自动选择合适的排序方法。 源码可参考文章：https://zhuanlan.zhihu.com/p/503795945 为什么选择使用sort()?在刷题碰到排序问题时，如果不用sort()函数，可能就必须自己写排序算法，首先，我们要选择合适的排
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-11 12:26" pubdate>
+              2023-01-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" target="_self">
+          快速排序
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/11/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" target="_self">
+        <div>
+          1.快排的原理基本思想：  先从数列中取出一个数作为基准数(key)； 分区，将比key大的全部放到它的右边，比key小的全部放在它的右边； 再对左右区间重复该步骤。  2.代码思路关键代码： 1234567891011121314151617181920void quicksort(int a[], int left, int right)&#123;	//l:左边指针， r:右边指针，key:
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-11 11:42" pubdate>
+              2023-01-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/" target="_self">
+          BUUCTF刷题1
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/05/BUUCTF%E5%88%B7%E9%A2%981/" target="_self">
+        <div>
+          目录  easyre reverse1 reverse2 内涵的软件  easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的fl
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-05 11:26" pubdate>
+              2023-01-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Reverse/">#Reverse</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/05/%E6%A8%A1%E6%8B%9F/" target="_self">
+          模拟
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/05/%E6%A8%A1%E6%8B%9F/" target="_self">
+        <div>
+          模拟1. 什么是模拟？模拟故名思意就是按照题目的要求，一步步写出代码。特点：模拟题目通常码量比较大、操作多、思路繁复的特点。并且由于码量比较大，很难查错。 2. 模拟过程从实际问题建立抽象模型，并使用合适的算法与数据结构来实现。模拟的过程：    读题。读懂题意，知道题目想做什么。 建模。利用什么样的数据结构来实现。 代码实现。写出代码框架。 调试、优化。  3. 几道简单例题 洛谷 P1042题
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-05 11:26" pubdate>
+              2023-01-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
   </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
