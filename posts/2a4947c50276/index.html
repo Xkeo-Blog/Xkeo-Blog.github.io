@@ -16,33 +16,36 @@
   <meta name="author" content="Xkeo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="目录  新年快乐 xor helloword reverse3  新年快乐 查壳   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;可以看到这是一个带壳的32位exe文件  脱壳  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;脱壳工具下载及使用:UPX  ida分析&amp;ensp;&amp;ensp;解读源码易得：flag{HappyNewYear!}  xor 查看文件信息   ida分析  这里发现">
+    <meta name="description" content="目录  easyre reverse1 reverse2 内涵的软件  easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的fl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BUUCTF刷题2">
-<meta property="og:url" content="http://kk-blog.top/2023/01/11/BUUCTF%E5%88%B7%E9%A2%982/index.html">
+<meta property="og:title" content="BUUCTF刷题1">
+<meta property="og:url" content="http://kk-blog.top/posts/2a4947c50276/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
-<meta property="og:description" content="目录  新年快乐 xor helloword reverse3  新年快乐 查壳   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;可以看到这是一个带壳的32位exe文件  脱壳  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;脱壳工具下载及使用:UPX  ida分析&amp;ensp;&amp;ensp;解读源码易得：flag{HappyNewYear!}  xor 查看文件信息   ida分析  这里发现">
+<meta property="og:description" content="目录  easyre reverse1 reverse2 内涵的软件  easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的fl">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/11/YdsR2.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/11/YdEpP.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/11/YdbKD.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUPoS.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUVML.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUfdt.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUlXq.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUr0m.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUHXW.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/17/YUjDG.png">
-<meta property="article:published_time" content="2023-01-11T06:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-17T09:39:50.708Z">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSuLn.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSHvl.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSjE7.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSTZ2.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSXFP.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YS2rD.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YS9Rj.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSRpS.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSnKL.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSojt.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YS3eq.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSZvm.png">
+<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSiUs.png">
+<meta property="article:published_time" content="2023-01-05T03:26:00.000Z">
+<meta property="article:modified_time" content="2023-01-17T09:39:46.390Z">
 <meta property="article:author" content="Xkeo">
 <meta property="article:tag" content="Reverse">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://c2.im5i.com/2023/01/11/YdsR2.png">
+<meta name="twitter:image" content="https://c2.im5i.com/2023/01/06/YSuLn.png">
   
   
   
-  <title>BUUCTF刷题2 - Xkeo&#39;s Blog</title>
+  <title>BUUCTF刷题1 - Xkeo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -80,7 +83,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"kk-blog.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"kk-blog.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VnO2nD4SRLH6IxKOxCpViMiq-gzGzoHsz","app_key":"BBZsxRxoY46Quoe6fWsAjdjO","server_url":"https://vno2nd4s.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -220,7 +223,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="BUUCTF刷题2"></span>
+            <span id="subtitle" data-typed-text="BUUCTF刷题1"></span>
           
         </div>
 
@@ -231,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-11 14:00" pubdate>
-          2023年1月11日 下午
+        <time datetime="2023-01-05 11:26" pubdate>
+          2023年1月5日 上午
         </time>
       </span>
     
@@ -243,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          789 字
         
       </span>
     
@@ -254,7 +257,7 @@
         
         
         
-          10 分钟
+          7 分钟
         
       </span>
     
@@ -292,67 +295,48 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">BUUCTF刷题2</h1>
+            <h1 style="display: none">BUUCTF刷题1</h1>
             
             
               <div class="markdown-body">
                 
                 <p><strong>目录</strong></p>
 <ul>
-<li><a href="#%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90">新年快乐</a></li>
-<li><a href="#xor">xor</a></li>
-<li><a href="#helloword">helloword</a></li>
-<li><a href="#reverse3">reverse3</a></li>
+<li><a href="#easyre">easyre</a></li>
+<li><a href="#reverse1">reverse1</a></li>
+<li><a href="#reverse2">reverse2</a></li>
+<li><a href="#%E5%86%85%E6%B6%B5%E7%9A%84%E8%BD%AF%E4%BB%B6">内涵的软件</a></li>
 </ul>
-<h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><ol>
-<li>查壳</li>
-</ol>
-<p><img src="https://c2.im5i.com/2023/01/11/YdsR2.png" srcset="/img/loading.gif" lazyload></p>
-<p>&ensp;&ensp;&ensp;&ensp;可以看到这是一个带壳的32位exe文件</p>
-<ol start="2">
-<li>脱壳</li>
-</ol>
-<p>&ensp;&ensp;&ensp;&ensp;脱壳工具下载及使用:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43633973/article/details/102573376?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167342003116800182793338%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167342003116800182793338&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-102573376-null-null.142%5Ev70%5Ejs_top,201%5Ev4%5Eadd_ask&utm_term=upx%E4%B8%8B%E8%BD%BD&spm=1018.2226.3001.4187">UPX</a><br><img src="https://c2.im5i.com/2023/01/11/YdEpP.png" srcset="/img/loading.gif" lazyload></p>
-<ol start="3">
-<li>ida分析<br><img src="https://c2.im5i.com/2023/01/11/YdbKD.png" srcset="/img/loading.gif" lazyload><br>&ensp;&ensp;解读源码易得：flag{HappyNewYear!}</li>
-</ol>
-<h1 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h1><ol>
-<li><p>查看文件信息<br> <img src="https://c2.im5i.com/2023/01/17/YUPoS.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="easyre"><a href="#easyre" class="headerlink" title="easyre"></a>easyre</h1><ol>
+<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSuLn.png" srcset="/img/loading.gif" lazyload>]<br>可以看到这是一个无壳的64位EXE文件。</p>
 </li>
-<li><p>ida分析<br> <img src="https://c2.im5i.com/2023/01/17/YUVML.png" srcset="/img/loading.gif" lazyload><br> 这里发现输入的字符串被修改过，修改后正确的字符串和global一致</p>
-<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sqf"><span class="hljs-variable">__data</span>:<span class="hljs-number">0000000100001050</span> <span class="hljs-variable">_global</span>         dq offset aFKWOXZUPFVMDGH<br><br><span class="hljs-variable">__cstring</span>:<span class="hljs-number">0000000100000</span>F6E aFKWOXZUPFVMDGH db <span class="hljs-string">&#x27;f&#x27;</span>,<span class="hljs-number">0</span>Ah              ; DATA XREF: <span class="hljs-variable">__data</span>:<span class="hljs-variable">_global</span>↓o<br><span class="hljs-variable">__cstring</span>:<span class="hljs-number">0000000100000</span>F6E                 db <span class="hljs-string">&#x27;k&#x27;</span>,<span class="hljs-number">0</span>Ch,<span class="hljs-string">&#x27;w&amp;O.@&#x27;</span>,<span class="hljs-number">11</span>h,<span class="hljs-string">&#x27;x&#x27;</span>,<span class="hljs-number">0</span>Dh,<span class="hljs-string">&#x27;Z;U&#x27;</span>,<span class="hljs-number">11</span>h,<span class="hljs-string">&#x27;p&#x27;</span>,<span class="hljs-number">19</span>h,<span class="hljs-string">&#x27;F&#x27;</span>,<span class="hljs-number">1</span>Fh,<span class="hljs-string">&#x27;v&quot;M#D&#x27;</span>,<span class="hljs-number">0</span>Eh,<span class="hljs-string">&#x27;g&#x27;</span><br><span class="hljs-variable">__cstring</span>:<span class="hljs-number">0000000100000</span>F6E                 db <span class="hljs-number">6</span>,<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-number">0</span>Fh,<span class="hljs-string">&#x27;G2O&#x27;</span>,<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="https://c2.im5i.com/2023/01/17/YUfdt.png" srcset="/img/loading.gif" lazyload><br>得到flag{QianQiuWanDai_YiTongJiangHu}</p>
-<h1 id="helloword"><a href="#helloword" class="headerlink" title="helloword"></a>helloword</h1><ol>
-<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUlXq.png" srcset="/img/loading.gif" lazyload><br>这是一个安卓的文件</p>
-</li>
-<li><p>jadx分析</p>
+<li><p>ida分析<br>Ctrl + f搜索一下main函数：<br><img src="https://c2.im5i.com/2023/01/06/YSHvl.png" srcset="/img/loading.gif" lazyload><br>找到main块F5生成伪代码，找到flag：<br><img src="https://c2.im5i.com/2023/01/06/YSjE7.png" srcset="/img/loading.gif" lazyload> </p>
 </li>
 </ol>
-<p>&ensp;&ensp;&ensp;&ensp;<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36735003/article/details/117445597?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167393878716800182721033%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167393878716800182721033&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-117445597-null-null.142%5Ev71%5Econtrol_1,201%5Ev4%5Eadd_ask&utm_term=jadx%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&spm=1018.2226.3001.4187">jadx下载与安装</a></p>
-<p><img src="https://c2.im5i.com/2023/01/17/YUr0m.png" srcset="/img/loading.gif" lazyload></p>
-<p>找到flag{7631a988259a00816deda84afb29430a}</p>
-<h1 id="reverse3"><a href="#reverse3" class="headerlink" title="reverse3"></a>reverse3</h1><ol>
-<li><p>查看文件信息<br><img src="https://c2.im5i.com/2023/01/17/YUHXW.png" srcset="/img/loading.gif" lazyload><br>32位无壳exe文件</p>
+<h1 id="reverse1"><a href="#reverse1" class="headerlink" title="reverse1"></a>reverse1</h1><ol>
+<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSTZ2.png" srcset="/img/loading.gif" lazyload><br>可以看到是64位EXE文件 无壳</p>
 </li>
-<li><p>ida分析</p>
+<li><p>ida分析<br>shift + f12查看字符串：<br><img src="https://c2.im5i.com/2023/01/06/YSXFP.png" srcset="/img/loading.gif" lazyload><br>可疑字符串：<br><img src="https://c2.im5i.com/2023/01/06/YS2rD.png" srcset="/img/loading.gif" lazyload><br>我们跟踪查看下：<br><img src="https://c2.im5i.com/2023/01/06/YS9Rj.png" srcset="/img/loading.gif" lazyload><br>分析可知str2就是我们要找的flag，但是str2比较之前被改变了一下：<br><img src="https://c2.im5i.com/2023/01/06/YSRpS.png" srcset="/img/loading.gif" lazyload><br>我们点击111和48，按r:<br><img src="https://c2.im5i.com/2023/01/06/YSnKL.png" srcset="/img/loading.gif" lazyload><br>分析可知：这串代码是把str2中的’o’变成了’0’,那么我们就需要把str2的初值中的’o’变为’0’即得flag<br>那么我们查看str2初值(直接点击即可)：</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haskell">.<span class="hljs-class"><span class="hljs-keyword">data</span>:000000014001C000 <span class="hljs-type">Str2</span>            db &#x27;&#123;<span class="hljs-title">hello_world</span>&#125;&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>易得flag{hell0_w0rld}</p>
 </li>
 </ol>
-<p><img src="https://c2.im5i.com/2023/01/17/YUjDG.png" srcset="/img/loading.gif" lazyload><br>程序流程：首先输入一串字符串，然后sub_4110BE进行处理，而后经过for处理，得到str2.</p>
-<p>所以想得到flag,只需要倒着来一遍就好.</p>
-<p>找到str2：</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">.da<span class="hljs-symbol">ta:0041</span>A034 Str2            <span class="hljs-built_in">db</span> &#x27;e3nifIH9b_C@<span class="hljs-built_in">n</span>@dH&#x27;,<span class="hljs-number">0</span> <br></code></pre></td></tr></table></figure>
+<h1 id="reverse2"><a href="#reverse2" class="headerlink" title="reverse2"></a>reverse2</h1><ol>
+<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSojt.png" srcset="/img/loading.gif" lazyload><br>是一个elf文件，可拖入ida64分析</p>
+</li>
+<li><p>ida分析<br>f5：<br><img src="https://c2.im5i.com/2023/01/06/YS3eq.png" srcset="/img/loading.gif" lazyload><br>这里我把char类型的数字转为了字符(对着数字按r即可)<br>分析：<br>flag在比较之前被更改过，之前所有字符i和r都被换成了1<br>我们也只需要把原字符模拟改变一次即可<br>查看flag:  </p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs haskell">.<span class="hljs-class"><span class="hljs-keyword">data</span>:0000000000601080 flag            db 7Bh                  ; <span class="hljs-type">DATA</span> <span class="hljs-type">XREF</span>: main+34↑r</span><br>.<span class="hljs-class"><span class="hljs-keyword">data</span>:0000000000601080                                         ; main+44↑r ...</span><br>.<span class="hljs-class"><span class="hljs-keyword">data</span>:0000000000601081 aHackingForFun  db &#x27;hacking_for_fun&#125;&#x27;,0</span><br></code></pre></td></tr></table></figure>
+<p>7Bh是{<br>正确的flag：{hack1ng_fo1_fun}</p>
+</li>
+</ol>
+<h1 id="内涵的软件"><a href="#内涵的软件" class="headerlink" title="内涵的软件"></a>内涵的软件</h1><ol>
+<li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSZvm.png" srcset="/img/loading.gif" lazyload><br>32位exe文件 无壳</p>
+</li>
+<li><p>ida分析<br><img src="https://c2.im5i.com/2023/01/06/YSiUs.png" srcset="/img/loading.gif" lazyload><br>找到flag：flag{49d3c93df25caad81232130f3d2ebfad}</p>
+</li>
+</ol>
+<p>额v2就是flag真是我没想到的，还找了半天结果用v2试了一下过了😂</p>
 
-<p>str2处理后：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">e2lfbDB2ZV95b3V9<br></code></pre></td></tr></table></figure>
-
-<p>那么我们就只需要知道sub_4110BE是什么加密函数就好了</p>
-<p>我们在string window中看到</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">.rdata:<span class="hljs-number">00417B30</span>	<span class="hljs-number">00000042</span>	C  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=<br></code></pre></td></tr></table></figure>
-
-<p>这是base64编码的标志，故盲猜是base64编码</p>
-<p><a target="_blank" rel="noopener" href="https://tool.hiofd.com/base64-online/">base64在线解码</a>得：</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="hljs-template-variable">&#123;i_l0ve_you&#125;</span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -397,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>BUUCTF刷题2</div>
-      <div>http://kk-blog.top/2023/01/11/BUUCTF刷题2/</div>
+      <div>BUUCTF刷题1</div>
+      <div>http://kk-blog.top/posts/2a4947c50276/</div>
     </div>
     <div class="license-meta">
       
@@ -410,7 +394,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月11日</div>
+          <div>2023年1月5日</div>
         </div>
       
       
@@ -442,9 +426,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/17/%E4%BA%8C%E5%88%86/" title="二分">
+                      <a href="/posts/11e79886944e/" title="快速排序">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">二分</span>
+                        <span class="hidden-mobile">快速排序</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -452,8 +436,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/11/sort()%E5%87%BD%E6%95%B0/" title="sort函数笔记">
-                        <span class="hidden-mobile">sort函数笔记</span>
+                      <a href="/posts/8fb837133a10/" title="模拟">
+                        <span class="hidden-mobile">模拟</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -464,6 +448,37 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"0WFJEGEsIHe0ZSbu0uDOJPXH-gzGzoHsz","appKey":"f2BpFfHytd4gEhQZdkm7jaUd","path":"window.location.pathname","placeholder":null,"avatar":"mp","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -559,6 +574,31 @@
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
   
   
   
@@ -705,6 +745,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
