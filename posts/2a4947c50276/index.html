@@ -16,32 +16,20 @@
   <meta name="author" content="Xkeo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="目录  easyre reverse1 reverse2 内涵的软件  easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的fl">
+    <meta name="description" content="easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的flag，但是str2比较之前被改变了一下：我们点击111和48，按r:分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BUUCTF刷题1">
 <meta property="og:url" content="http://kk-blog.top/posts/2a4947c50276/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
-<meta property="og:description" content="目录  easyre reverse1 reverse2 内涵的软件  easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的fl">
+<meta property="og:description" content="easyre 查壳]可以看到这是一个无壳的64位EXE文件。  ida分析Ctrl + f搜索一下main函数：找到main块F5生成伪代码，找到flag：    reverse1 查壳可以看到是64位EXE文件 无壳  ida分析shift + f12查看字符串：可疑字符串：我们跟踪查看下：分析可知str2就是我们要找的flag，但是str2比较之前被改变了一下：我们点击111和48，按r:分析">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSuLn.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSHvl.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSjE7.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSTZ2.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSXFP.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YS2rD.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YS9Rj.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSRpS.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSnKL.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSojt.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YS3eq.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSZvm.png">
-<meta property="og:image" content="https://c2.im5i.com/2023/01/06/YSiUs.png">
+<meta property="og:image" content="http://kk-blog.top/img%5Cpage1.jpg">
 <meta property="article:published_time" content="2023-01-05T03:26:00.000Z">
-<meta property="article:modified_time" content="2023-01-17T09:39:46.390Z">
+<meta property="article:modified_time" content="2023-02-07T10:25:48.262Z">
 <meta property="article:author" content="Xkeo">
 <meta property="article:tag" content="Reverse">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://c2.im5i.com/2023/01/06/YSuLn.png">
+<meta name="twitter:image" content="http://kk-blog.top/img%5Cpage1.jpg">
   
   
   
@@ -217,7 +205,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img%5Cpage1.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -246,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          789 字
+          760 字
         
       </span>
     
@@ -300,14 +288,7 @@
             
               <div class="markdown-body">
                 
-                <p><strong>目录</strong></p>
-<ul>
-<li><a href="#easyre">easyre</a></li>
-<li><a href="#reverse1">reverse1</a></li>
-<li><a href="#reverse2">reverse2</a></li>
-<li><a href="#%E5%86%85%E6%B6%B5%E7%9A%84%E8%BD%AF%E4%BB%B6">内涵的软件</a></li>
-</ul>
-<h1 id="easyre"><a href="#easyre" class="headerlink" title="easyre"></a>easyre</h1><ol>
+                <h1 id="easyre"><a href="#easyre" class="headerlink" title="easyre"></a>easyre</h1><ol>
 <li><p>查壳<br><img src="https://c2.im5i.com/2023/01/06/YSuLn.png" srcset="/img/loading.gif" lazyload>]<br>可以看到这是一个无壳的64位EXE文件。</p>
 </li>
 <li><p>ida分析<br>Ctrl + f搜索一下main函数：<br><img src="https://c2.im5i.com/2023/01/06/YSHvl.png" srcset="/img/loading.gif" lazyload><br>找到main块F5生成伪代码，找到flag：<br><img src="https://c2.im5i.com/2023/01/06/YSjE7.png" srcset="/img/loading.gif" lazyload> </p>
@@ -350,16 +331,6 @@
 
 <span class="category-chains">
   
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
-  
-  
-
-      </span>
-    
   
 </span>
 
@@ -421,29 +392,6 @@
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/posts/11e79886944e/" title="快速排序">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">快速排序</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/posts/8fb837133a10/" title="模拟">
-                        <span class="hidden-mobile">模拟</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
@@ -574,31 +522,6 @@
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="leancloud-site-pv-container" style="display: none">
-        总访问量 
-        <span id="leancloud-site-pv"></span>
-         次
-      </span>
-    
-    
-      <span id="leancloud-site-uv-container" style="display: none">
-        总访客数 
-        <span id="leancloud-site-uv"></span>
-         人
-      </span>
-    
-    
-
-  
-</div>
-
   
   
   
@@ -745,8 +668,6 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
-
-  <script defer src="/js/leancloud.js" ></script>
 
 
 
