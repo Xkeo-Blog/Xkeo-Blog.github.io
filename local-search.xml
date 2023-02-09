@@ -4,9 +4,34 @@
   
   
   <entry>
+    <title>pwn基础理论(二)</title>
+    <link href="/posts/d1f0facc185b/"/>
+    <url>/posts/d1f0facc185b/</url>
+    
+    <content type="html"><![CDATA[<h2 id="保护和溢出"><a href="#保护和溢出" class="headerlink" title="保护和溢出"></a>保护和溢出</h2><p>操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞代码的时候，需要特别注意目标进程是否开启了DEP(Linux下对应NX)、ASLR(Linux下对应PIE)等机制，例如存在DEP(NX)的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。</p><h2 id="常见的保护、"><a href="#常见的保护、" class="headerlink" title="常见的保护、"></a>常见的保护、</h2><ol><li>canary(栈保护)</li></ol><p>栈溢出保护是一种缓冲区溢出攻击缓解手段，当函数存在缓冲区溢出攻击漏洞时，攻击者可以覆盖栈上的返回地址来让shellcode能够得到执行。当启用栈保护后，函数开始执行的时候会先往栈里插入cookie信息，当函数真正返回的时候会验证cookie信息是否合法，如果不合法就停止程序运行。攻击者在覆盖返回地址的时候往往也会将cookie信息给覆盖掉，导致栈保护检查失败而阻止shellcode的执行。在Linux中我们将cookie信息称为canary。</p><ol start="2"><li>NX（DEP）</li></ol><p>NX即No-execute(不可执行)的意思，NX(DEP)的基本原理是将数据所在内存页标识为不可执行，当程序溢出成功转入shellcode时，程序会尝试在数据页面上执行指令，此时CPU就会抛出异常，而不是去执行指令。</p><ol start="3"><li>PIE（ASLR）</li></ol><p>一般情况下NX（Windows平台上称其为DEP）和地址空间分布随机化（ASLR）会同时工作。</p><p>内存地址随机化机制(address space layout randomization)，有以下三种情况</p><p>0——表示关闭进程地址空间随机化。</p><p>1——表示将mmp的基址，satck和vdso页面随机化。</p><p>2——表示在1的基础上增加栈的随机化。</p><p>可以防范基于Ret2libc方式的针对DEP的攻击。ASLR和DEP配合使用，能有效阻止进攻者在堆栈上运行恶意代码。</p><p>以下是不太明白的保护机制</p><ol start="4"><li>FORTIFY</li><li>RELRO</li></ol><h2 id="检查保护情况"><a href="#检查保护情况" class="headerlink" title="检查保护情况"></a>检查保护情况</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">checksec</span> 文件名<br>注意：以root权限执行<br></code></pre></td></tr></table></figure><h2 id="关闭栈保护"><a href="#关闭栈保护" class="headerlink" title="关闭栈保护"></a>关闭栈保护</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stata">编译时的语句：<br>    gcc -<span class="hljs-keyword">no</span>-pie -fno-<span class="hljs-keyword">stack</span>-protector -z execstack -m32 -o <span class="hljs-keyword">test</span>(文件名) 源文件<br></code></pre></td></tr></table></figure><h2 id="查看程序使用了哪些函数"><a href="#查看程序使用了哪些函数" class="headerlink" title="查看程序使用了哪些函数"></a>查看程序使用了哪些函数</h2><ol><li><p>ida(感觉更好用)</p></li><li><p>objdump</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">objdump -t -j .text 文件<br><br>-j <span class="hljs-type">name</span>：仅仅显示指定名称为<span class="hljs-type">name</span>的section信息<br><br>-t 显示文件的符号表入口<br><br>objdump//查看<span class="hljs-keyword">read</span>程序的.text段有哪些函数<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>pwn</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>pwn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>pwn基础理论(一)</title>
-    <link href="/posts/8398f937a223/"/>
-    <url>/posts/8398f937a223/</url>
+    <link href="/posts/28b8e746454c/"/>
+    <url>/posts/28b8e746454c/</url>
     
     <content type="html"><![CDATA[<h2 id="什么是溢出？"><a href="#什么是溢出？" class="headerlink" title="什么是溢出？"></a>什么是溢出？</h2><p>概念：在计算机中，当要表示的数据超出计算机所使用的数据的表示范围时，则产生数据的溢出。</p><p>产生的原因：</p><ol><li>使用非类型安全(non-type-safe)的语言，如：C/C++等。</li><li>以不可靠的方式存取或者复制内存缓冲区。</li><li>编译器设置的内存缓冲区太靠近关键数据结构。</li></ol><h2 id="什么是pwn？"><a href="#什么是pwn？" class="headerlink" title="什么是pwn？"></a>什么是pwn？</h2><p>“pwn”是一个黑客语法的俚语，是指攻破设备或者系统。发音类似“砰”，对黑客而言，这就是成功实施攻击的声音——砰的一声，被“黑”的电脑或手机就被你操纵。感觉就是向目标发送特定的数据，使其执行我们发送的恶意代码。 </p><h2 id="32位-pwn常用寄存器复习——ESP、EBP、EIP"><a href="#32位-pwn常用寄存器复习——ESP、EBP、EIP" class="headerlink" title="(32位)pwn常用寄存器复习——ESP、EBP、EIP"></a>(32位)pwn常用寄存器复习——ESP、EBP、EIP</h2><p>ESP：用来存储函数调用栈的栈顶地址，在压栈和退栈时发生变化。</p><p>EBP：用来存储当前函数状态的基地址，在函数运行时不变，可以用来索引确定函数参数或局部变量的位置。</p><p>EIP：用来存储即将要执行的程序指令的地址。</p><h2 id="32位X86架构下常见汇编指令"><a href="#32位X86架构下常见汇编指令" class="headerlink" title="32位X86架构下常见汇编指令"></a>32位X86架构下常见汇编指令</h2><p>mov</p><p>数据传输指令，将SRC传至DST。</p><p>格式：mov DST, SRC;</p><p>pop</p><p>弹出堆栈指令，将栈顶的数据弹出并存至DST。</p><p>格式：pop DST;</p><p>add/sub</p><p>加减法指令，将运算结果存到DST。</p><p>格式：add/sub DST, SRC;</p><p>push</p><p>压入堆栈指令，将SRC压入栈内。</p><p>格式：push SRC;</p><p>lea</p><p>取地址指令，将MEM的地址存至REG。</p><p>格式：lea PEG, MEM;</p><p>call</p><p>调用指令，将当前的EIP压入栈顶，并将PTR存入EIP。</p><p>格式：call ptr</p><p>32位X86架构下汇编指令有两种格式intel与AT&amp;T</p><p>intel：寄存器名称和数值前无符号。</p><p>AT&amp;T：寄存器名字前加“%”，数值前加“$”。</p><h2 id="什么是栈帧？"><a href="#什么是栈帧？" class="headerlink" title="什么是栈帧？"></a>什么是栈帧？</h2><p>栈帧就是一个函数执行的环境：函数参数、函数的局部变量、函数执行完后返回到哪里等等。</p><p>每一个栈帧代表的就是一个未运行完的函数  。</p><p><img src="https://t.gmit.vip/2023/02/07/w92msl.png"></p>]]></content>
     

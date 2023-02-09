@@ -234,7 +234,74 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/8398f937a223/" target="_self">
+        <a href="/posts/d1f0facc185b/" target="_self">
+          <img src="/img%5Cpage2.jpg" srcset="/img/loading.gif" lazyload alt="pwn基础理论(二)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/d1f0facc185b/" target="_self">
+          pwn基础理论(二)
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/d1f0facc185b/" target="_self">
+        <div>
+          保护和溢出操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞代码的时候，需要特别注意目标进程是否开启了DEP(Linux下对应NX)、ASLR(Linux下对应PIE)等机制，例如存在DEP(NX)的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。 常见的保护、 canary(栈保护)  栈溢出保护是一种缓冲区溢出
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-02-09 15:35" pubdate>
+              2023-02-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/pwn/">#pwn</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/28b8e746454c/" target="_self">
           <img src="/img%5Cpage1.jpg" srcset="/img/loading.gif" lazyload alt="pwn基础理论(一)">
         </a>
       </div>
@@ -242,13 +309,13 @@
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/posts/8398f937a223/" target="_self">
+        <a href="/posts/28b8e746454c/" target="_self">
           pwn基础理论(一)
         </a>
       </h1>
 
       
-      <a class="index-excerpt " href="/posts/8398f937a223/" target="_self">
+      <a class="index-excerpt " href="/posts/28b8e746454c/" target="_self">
         <div>
           什么是溢出？概念：在计算机中，当要表示的数据超出计算机所使用的数据的表示范围时，则产生数据的溢出。 产生的原因：  使用非类型安全(non-type-safe)的语言，如：C/C++等。 以不可靠的方式存取或者复制内存缓冲区。 编译器设置的内存缓冲区太靠近关键数据结构。  什么是pwn？“pwn”是一个黑客语法的俚语，是指攻破设备或者系统。发音类似“砰”，对黑客而言，这就是成功实施攻击的声音——砰
         </div>
