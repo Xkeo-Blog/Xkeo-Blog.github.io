@@ -16,16 +16,16 @@
   <meta name="author" content="Xkeo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原理ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。 这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。 示例文件:ret2text 查看一下程序的保护机制">
+    <meta name="description" content="ret2text原理ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。 这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。 示例文件:ret2text 查看一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ret2text">
 <meta property="og:url" content="http://kk-blog.top/posts/c7d49a8c372d/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
-<meta property="og:description" content="原理ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。 这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。 示例文件:ret2text 查看一下程序的保护机制">
+<meta property="og:description" content="ret2text原理ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。 这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。 示例文件:ret2text 查看一">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kk-blog.top/img%5Cpage3.jpg">
 <meta property="article:published_time" content="2023-02-14T03:00:00.000Z">
-<meta property="article:modified_time" content="2023-02-14T12:02:16.772Z">
+<meta property="article:modified_time" content="2023-02-14T12:06:21.586Z">
 <meta property="article:author" content="Xkeo">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary_large_image">
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          563 字
+          571 字
         
       </span>
     
@@ -288,7 +288,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。</p>
+                <h1 id="ret2text"><a href="#ret2text" class="headerlink" title="ret2text"></a>ret2text</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。</p>
 <p>这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>文件:<a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/stackoverflow/ret2text/bamboofox-ret2text/ret2text">ret2text</a></p>
 <p><strong>查看一下程序的保护机制</strong><br><img src="https://t.gmit.vip/2023/02/14/x3m2b6.png" srcset="/img/loading.gif" lazyload><br>可以看到这是开启了NX保护的32位程序</p>
