@@ -4,11 +4,36 @@
   
   
   <entry>
+    <title>栈溢出原理</title>
+    <link href="/posts/4df0b27b7ebe/"/>
+    <url>/posts/4df0b27b7ebe/</url>
+    
+    <content type="html"><![CDATA[<h2 id="栈介绍"><a href="#栈介绍" class="headerlink" title="栈介绍"></a>栈介绍</h2><p>栈是一种典型的后进先出 (Last in First Out) 的数据结构，其操作主要有压栈 (push) 与出栈 (pop) 两种操作。</p><p>高级语言在运行时都会被转换为汇编程序，在汇编程序运行过程中，充分利用了这一数据结构。每个程序在运行时都有虚拟地址空间，其中某一部分就是该程序对应的栈，用于保存函数调用信息和局部变量。此外，常见的操作也是压栈与出栈。需要注意的是，<strong>程序的栈是从进程地址空间的高地址向低地址增长的。</strong></p><p>函数调用栈的工作过程：<a href="https://www.bilibili.com/video/BV1Xt411x7Dr/?spm_id_from=trigger_reload&vd_source=75b0e2176ed6115febad096a2562ae52">32位程序动画演示</a></p><p>需要注意的是，32 位和 64 位程序有以下简单的区别：</p><p>x86：函数参数在函数返回地址的上方</p><p>x64：</p><ol><li>System Ⅴ AMD64 ABI(Linux、FreeBSD、macOS等采用)中前六个整型或指针参数依次保存在RDI，RSI，RDX，RCX，R8和R9寄存器中，如果还有更多的参数的话才会保存在栈上。</li><li>内存地址不能大于0x00007FFFFFFFFFFF，6个字节长度，否则会抛出异常。</li></ol><h2 id="栈溢出原理"><a href="#栈溢出原理" class="headerlink" title="栈溢出原理"></a>栈溢出原理</h2><p>栈溢出指的是程序向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，因而导致与其相邻的栈中的变量的值被改变。这种问题是一种特定的缓冲区溢出漏洞，类似的还有堆溢出，bss 段溢出等溢出方式。栈溢出漏洞轻则可以使程序崩溃，重则可以使攻击者控制程序执行流程。此外，我们也不难发现，发生栈溢出的基本前提是</p><ol><li><p>程序必须向栈上写入数据。</p></li><li><p>写入的数据大小没有被良好地控制。</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>pwn</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>pwn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>pwn基础理论(二)</title>
     <link href="/posts/d1f0facc185b/"/>
     <url>/posts/d1f0facc185b/</url>
     
-    <content type="html"><![CDATA[<h2 id="保护和溢出"><a href="#保护和溢出" class="headerlink" title="保护和溢出"></a>保护和溢出</h2><p>操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞代码的时候，需要特别注意目标进程是否开启了DEP(Linux下对应NX)、ASLR(Linux下对应PIE)等机制，例如存在DEP(NX)的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。</p><h2 id="常见的保护、"><a href="#常见的保护、" class="headerlink" title="常见的保护、"></a>常见的保护、</h2><ol><li>canary(栈保护)</li></ol><p>栈溢出保护是一种缓冲区溢出攻击缓解手段，当函数存在缓冲区溢出攻击漏洞时，攻击者可以覆盖栈上的返回地址来让shellcode能够得到执行。当启用栈保护后，函数开始执行的时候会先往栈里插入cookie信息，当函数真正返回的时候会验证cookie信息是否合法，如果不合法就停止程序运行。攻击者在覆盖返回地址的时候往往也会将cookie信息给覆盖掉，导致栈保护检查失败而阻止shellcode的执行。在Linux中我们将cookie信息称为canary。</p><ol start="2"><li>NX（DEP）</li></ol><p>NX即No-execute(不可执行)的意思，NX(DEP)的基本原理是将数据所在内存页标识为不可执行，当程序溢出成功转入shellcode时，程序会尝试在数据页面上执行指令，此时CPU就会抛出异常，而不是去执行指令。</p><ol start="3"><li>PIE（ASLR）</li></ol><p>一般情况下NX（Windows平台上称其为DEP）和地址空间分布随机化（ASLR）会同时工作。</p><p>内存地址随机化机制(address space layout randomization)，有以下三种情况</p><p>0——表示关闭进程地址空间随机化。</p><p>1——表示将mmp的基址，satck和vdso页面随机化。</p><p>2——表示在1的基础上增加栈的随机化。</p><p>可以防范基于Ret2libc方式的针对DEP的攻击。ASLR和DEP配合使用，能有效阻止进攻者在堆栈上运行恶意代码。</p><p>以下是不太明白的保护机制</p><ol start="4"><li>FORTIFY</li><li>RELRO</li></ol><h2 id="检查保护情况"><a href="#检查保护情况" class="headerlink" title="检查保护情况"></a>检查保护情况</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">checksec</span> 文件名<br>注意：以root权限执行<br></code></pre></td></tr></table></figure><h2 id="关闭栈保护"><a href="#关闭栈保护" class="headerlink" title="关闭栈保护"></a>关闭栈保护</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stata">编译时的语句：<br>    gcc -<span class="hljs-keyword">no</span>-pie -fno-<span class="hljs-keyword">stack</span>-protector -z execstack -m32 -o <span class="hljs-keyword">test</span>(文件名) 源文件<br></code></pre></td></tr></table></figure><h2 id="查看程序使用了哪些函数"><a href="#查看程序使用了哪些函数" class="headerlink" title="查看程序使用了哪些函数"></a>查看程序使用了哪些函数</h2><ol><li><p>ida(感觉更好用)</p></li><li><p>objdump</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">objdump -t -j .text 文件<br><br>-j <span class="hljs-type">name</span>：仅仅显示指定名称为<span class="hljs-type">name</span>的section信息<br><br>-t 显示文件的符号表入口<br><br>objdump//查看<span class="hljs-keyword">read</span>程序的.text段有哪些函数<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="保护和溢出"><a href="#保护和溢出" class="headerlink" title="保护和溢出"></a>保护和溢出</h2><p>操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞代码的时候，需要特别注意目标进程是否开启了DEP(Linux下对应NX)、ASLR(Linux下对应PIE)等机制，例如存在DEP(NX)的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。</p><h2 id="常见的保护、"><a href="#常见的保护、" class="headerlink" title="常见的保护、"></a>常见的保护、</h2><ol><li>canary(栈保护)</li></ol><p>栈溢出保护是一种缓冲区溢出攻击缓解手段，当函数存在缓冲区溢出攻击漏洞时，攻击者可以覆盖栈上的返回地址来让shellcode能够得到执行。当启用栈保护后，函数开始执行的时候会先往栈里插入cookie信息，当函数真正返回的时候会验证cookie信息是否合法，如果不合法就停止程序运行。攻击者在覆盖返回地址的时候往往也会将cookie信息给覆盖掉，导致栈保护检查失败而阻止shellcode的执行。在Linux中我们将cookie信息称为canary。</p><ol start="2"><li>NX（DEP）</li></ol><p>NX即No-execute(不可执行)的意思，NX(DEP)的基本原理是将数据所在内存页标识为不可执行，当程序溢出成功转入shellcode时，程序会尝试在数据页面上执行指令，此时CPU就会抛出异常，而不是去执行指令。</p><ol start="3"><li>PIE（ASLR）</li></ol><p>一般情况下NX（Windows平台上称其为DEP）和地址空间分布随机化（ASLR）会同时工作。</p><p>内存地址随机化机制(address space layout randomization)，有以下三种情况</p><p>0——表示关闭进程地址空间随机化。</p><p>1——表示将mmp的基址，satck和vdso页面随机化。</p><p>2——表示在1的基础上增加栈的随机化。</p><p>可以防范基于Ret2libc方式的针对DEP的攻击。ASLR和DEP配合使用，能有效阻止进攻者在堆栈上运行恶意代码。</p><h2 id="检查保护情况"><a href="#检查保护情况" class="headerlink" title="检查保护情况"></a>检查保护情况</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">checksec</span> 文件名<br>注意：以root权限执行<br></code></pre></td></tr></table></figure><h2 id="关闭栈保护"><a href="#关闭栈保护" class="headerlink" title="关闭栈保护"></a>关闭栈保护</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stata">编译时的语句：<br>    gcc -<span class="hljs-keyword">no</span>-pie -fno-<span class="hljs-keyword">stack</span>-protector -z execstack -m32 -o <span class="hljs-keyword">test</span>(文件名) 源文件<br></code></pre></td></tr></table></figure><h2 id="查看程序使用了哪些函数"><a href="#查看程序使用了哪些函数" class="headerlink" title="查看程序使用了哪些函数"></a>查看程序使用了哪些函数</h2><ol><li><p>ida(感觉更好用)</p></li><li><p>objdump</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">objdump -t -j .text 文件<br><br>-j <span class="hljs-type">name</span>：仅仅显示指定名称为<span class="hljs-type">name</span>的section信息<br><br>-t 显示文件的符号表入口<br><br>objdump//查看<span class="hljs-keyword">read</span>程序的.text段有哪些函数<br></code></pre></td></tr></table></figure></li></ol>]]></content>
     
     
     <categories>
